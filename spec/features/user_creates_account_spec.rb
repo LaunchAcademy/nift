@@ -24,7 +24,7 @@ feature 'user creates an account', %q{
     fill_in 'user_password_confirmation', with: 'b1234567'
     click_on 'Sign up'
 
-    expect(current_path).to eq('/home')
+    expect(current_path).to eq('/')
     expect(User.count).to eq(count + 1)
   end
 
@@ -36,7 +36,7 @@ feature 'user creates an account', %q{
       fill_in 'Email', with: 'brutus@gmail.com'
       fill_in 'user_password', with: 'b1234567'
       fill_in 'user_password_confirmation', with: 'b1234567'
-      fill_in omitted, with: ""
+      fill_in omitted, with: ''
       click_on 'Sign up'
 
       fields.each {|field| expect(page).to have_content("can't be blank")}
