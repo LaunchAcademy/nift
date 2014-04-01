@@ -25,9 +25,9 @@ describe User do
     end
   end
 
-  describe 'associations' do
-    it {should have_many(:votes)}
-    it {should have_many(:comments)}
-    it {should have_many(:products)}
-  end
+  # describe 'associations' do
+  #   it {should have_many(:votes)}
+  #   it {should have_many(:comments)}
+  #   it {should have_many(:products)}
+  # end
 end
