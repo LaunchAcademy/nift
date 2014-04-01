@@ -1,0 +1,6 @@
+<h1>Create a New Product</h1>
+
+ <%= simple_form_for @product do |f| %>
+   <%= f.input :name, label: "Product Name" %>
+   <%= f.button :submit %>
+ <% end %>
