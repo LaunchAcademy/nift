@@ -17,32 +17,40 @@ feature 'user creates an account', %q{
   scenario 'user registers with valid information' do
     count = User.count
 
-    visit '/nifty/register'
-    fill_in 'user_name', with: 'Brutus'
-    fill_in 'user_email', with: 'brutus@gmail.com'
+    visit '/users/sign_up'
+    fill_in 'User name', with: 'Brutus'
+    fill_in 'Email', with: 'brutus@gmail.com'
     fill_in 'user_password', with: 'b1234567'
     fill_in 'user_password_confirmation', with: 'b1234567'
-    click_on 'Register'
+    click_on 'Sign up'
 
     expect(current_path).to eq('/home')
     expect(User.count).to eq(count + 1)
   end
 
   scenario 'user fills out form incorrectly' do
-    fields = ['User Name', 'Email', 'Password']
-    visit '/nifty/register'
-    click_on 'Register'
-    fields.each {|field| expect(page).to have_content("#{field} can't be blank")}
+    fields = ['User name', 'Email', 'user_password']
+    fields.each do |omitted|
+      visit '/users/sign_up'
+      fill_in 'User name', with: 'Brutus'
+      fill_in 'Email', with: 'brutus@gmail.com'
+      fill_in 'user_password', with: 'b1234567'
+      fill_in 'user_password_confirmation', with: 'b1234567'
+      fill_in omitted, with: ""
+      click_on 'Sign up'
+
+      fields.each {|field| expect(page).to have_content("can't be blank")}
+    end
   end
 
   scenario 'user enters an invalid password' do
-    visit '/nifty/register'
-    fill_in 'user_name', with: 'Brutus'
+    visit '/users/sign_up'
+    fill_in 'User name', with: 'Brutus'
     fill_in 'user_email', with: 'brutus@gmail.com'
     fill_in 'user_password', with: 'b123'
     fill_in 'user_password_confirmation', with: 'b123'
-    click_on 'Register'
+    click_on 'Sign up'
 
-    expect(page).to have_content('Password is too short')
+    expect(page).to have_content('is too short')
   end
 end
