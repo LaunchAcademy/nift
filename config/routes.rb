@@ -1,8 +1,10 @@
 Nifty::Application.routes.draw do
 
   resource :products, only: [:index, :new]
-   root 'products#index'
+  devise_for :users
+  root to: 'home#index'
 
+  # resources :nifty, only: [:new, :create]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -57,4 +59,5 @@ Nifty::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
 end

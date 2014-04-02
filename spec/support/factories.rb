@@ -1,20 +1,8 @@
 
 FactoryGirl.define do
-
-
-  factory :product do
-    name "Portable Iceberg Lettuce Synthetic Grinder"
-    description "MyText"
-    url "MyString"
-    author_id 1
-    company_id 1
-    price "9.99"
-    release_date "MyString"
-    tags "MyString"
+  factory :user do
+    username 'George Jetson'
+    email 'gj@gmail.com'
+    password '12345678'
   end
-
-
-
-
-
 end
