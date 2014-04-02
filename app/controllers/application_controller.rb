@@ -8,10 +8,6 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) << :user_name
-  end
-
-  def after_sign_up_path_for(resource_or_scope)
-    root_path
+    devise_parameter_sanitizer.for(:sign_up) << :username
   end
 end

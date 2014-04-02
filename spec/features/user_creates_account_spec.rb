@@ -20,10 +20,7 @@ feature 'user creates an account', %q{
     visit root_path
     user = FactoryGirl.build(:user)
     click_on 'Sign up'
-    fill_in 'User name', with: user.user_name
-    fill_in 'Email', with: user.email
-    fill_in 'user_password', with: user.password
-    fill_in 'user_password_confirmation', with: user.password
+    fill_out_form(user)
     click_on 'Sign up'
 
     expect(current_path).to eq(root_path)
@@ -31,25 +28,23 @@ feature 'user creates an account', %q{
   end
 
   scenario 'user fills out form incorrectly' do
-    fields = ['User name', 'Email', 'user_password']
+    fields = ['Username', 'Email', 'user_password']
     user = FactoryGirl.build(:user)
+
     fields.each do |omitted|
-      visit '/users/sign_up'
-      fill_in 'User name', with: user.user_name
-      fill_in 'Email', with: user.email
-      fill_in 'user_password', with: user.password
-      fill_in 'user_password_confirmation', with: user.password
+      visit new_user_registration_path
+      fill_out_form(user)
       fill_in omitted, with: ''
       click_on 'Sign up'
 
-      fields.each {|field| expect(page).to have_content("can't be blank")}
+      expect(page).to have_content("can't be blank")
     end
   end
 
   scenario 'user enters an invalid password' do
     user = FactoryGirl.build(:user)
-    visit '/users/sign_up'
-    fill_in 'User name', with: user.user_name
+    visit new_user_registration_path
+    fill_in 'Username', with: user.username
     fill_in 'Email', with: user.email
     fill_in 'user_password', with: '1234'
     fill_in 'user_password_confirmation', with: '1234'

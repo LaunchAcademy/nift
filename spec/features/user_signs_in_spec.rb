@@ -10,7 +10,7 @@ feature 'user_signs_in' do
     click_on 'Sign in'
 
     expect(current_path).to eq(root_path)
-    expect(page).to have_content("Signed in as #{user.user_name}")
+    expect(page).to have_content("Signed in as #{user.username}")
   end
 
   scenario 'user enters invalid credentials' do
