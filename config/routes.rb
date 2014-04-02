@@ -1,6 +1,7 @@
 Nifty::Application.routes.draw do
 
-  resource :products, only: [:index, :new]
+  resource :products, only: [:create, :new]
+
   devise_for :users
   root to: 'home#index'
 

@@ -1,18 +1,32 @@
 class ProductsController < ApplicationController
 
-  def index
-    @product = Product.all
-  end
+  before_action :authenticate_user!
 
   def new
     @product = Product.new
+    @product.company = Company.new
   end
 
   def create
-    @product = Product.new
+    @company = Company.find_or_create_by(product_params[:company_attributes])
+    @product = Product.new(product_params)
+    @product.company = @company
+    @product.user = current_user
+    if @product.save
+      redirect_to root_path, notice: "You just created a new Product"
+    else
+    end
   end
 
-  def show
-  end
+  private
 
+  def product_params
+    params.require(:product).permit(
+      :name,
+      :description,
+      :price,
+      :url,
+      company_attributes: [:name, :location, :url]
+      )
+  end
 end

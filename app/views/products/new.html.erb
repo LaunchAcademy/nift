@@ -1,6 +1,19 @@
 <h1>Create a New Product</h1>
 
+
  <%= simple_form_for @product do |f| %>
    <%= f.input :name, label: "Product Name" %>
-   <%= f.button :submit %>
+   <%= f.input :description %>
+   <%= f.input :price %>
+
+    <%= f.simple_fields_for :company do |c| %>
+      <%= c.input :name, label: "Company Name" %>
+      <%= c.input :location %>
+      <%= c.input :url, label: "Company Website" %>
+    <% end %>
+
+   <%= f.input :url, label: "Product Website" %>
+   <%= f.button :submit, "Submit" %>
  <% end %>
+
+

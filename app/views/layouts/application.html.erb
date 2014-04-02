@@ -28,7 +28,7 @@
     <ul class="left">
       <li><a href="#">Sign In</a></li>
       <li><a href="#">Sign Up</a></li>
-      <li><a href="/products/new">New Product</a></li>
+      <li><%= link_to 'New Product', new_products_path %></li>
     </ul>
 
 
@@ -56,6 +56,7 @@
 
   </section>
 </nav>
+    <%= render 'layouts/messages' %>
     <%= yield %>
     <%= javascript_include_tag "application" %>
 
