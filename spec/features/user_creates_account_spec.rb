@@ -17,38 +17,37 @@ feature 'user creates an account', %q{
   scenario 'user registers with valid information' do
     count = User.count
 
-    visit '/users/sign_up'
-    fill_in 'User name', with: 'Brutus'
-    fill_in 'Email', with: 'brutus@gmail.com'
-    fill_in 'user_password', with: 'b1234567'
-    fill_in 'user_password_confirmation', with: 'b1234567'
+    visit root_path
+    user = FactoryGirl.build(:user)
+    click_on 'Sign up'
+    fill_out_form(user)
     click_on 'Sign up'
 
-    expect(current_path).to eq('/')
+
     expect(User.count).to eq(count + 1)
   end
 
   scenario 'user fills out form incorrectly' do
-    fields = ['User name', 'Email', 'user_password']
+    fields = ['Username', 'Email', 'user_password']
+    user = FactoryGirl.build(:user)
+
     fields.each do |omitted|
-      visit '/users/sign_up'
-      fill_in 'User name', with: 'Brutus'
-      fill_in 'Email', with: 'brutus@gmail.com'
-      fill_in 'user_password', with: 'b1234567'
-      fill_in 'user_password_confirmation', with: 'b1234567'
-      fill_in omitted, with: ""
+      visit new_user_registration_path
+      fill_out_form(user)
+      fill_in omitted, with: ''
       click_on 'Sign up'
 
-      fields.each {|field| expect(page).to have_content("can't be blank")}
+      expect(page).to have_content("can't be blank")
     end
   end
 
   scenario 'user enters an invalid password' do
-    visit '/users/sign_up'
-    fill_in 'User name', with: 'Brutus'
-    fill_in 'user_email', with: 'brutus@gmail.com'
-    fill_in 'user_password', with: 'b123'
-    fill_in 'user_password_confirmation', with: 'b123'
+    user = FactoryGirl.build(:user)
+    visit new_user_registration_path
+    fill_in 'Username', with: user.username
+    fill_in 'Email', with: user.email
+    fill_in 'user_password', with: '1234'
+    fill_in 'user_password_confirmation', with: '1234'
     click_on 'Sign up'
 
     expect(page).to have_content('is too short')

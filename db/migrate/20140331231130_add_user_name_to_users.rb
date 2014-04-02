@@ -1,5 +1,5 @@
 class AddUserNameToUsers < ActiveRecord::Migration
   def change
-    add_column :users, :user_name, :string, null: false
+    add_column :users, :username, :string, null: false
   end
 end
