@@ -24,7 +24,7 @@ feature 'user creates an account', %q{
     fill_in 'user_password_confirmation', with: 'b1234567'
     click_on 'Sign up'
 
-    expect(current_path).to eq('/home')
+    expect(current_path).to eq('/')
     expect(User.count).to eq(count + 1)
   end
 
