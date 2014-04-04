@@ -8,11 +8,7 @@ class User < ActiveRecord::Base
   validates :role, presence: true, inclusion: {in: %w(admin user)}
 
   def admin?
-    if role == "admin"
-      true
-    else
-      false
-    end
+    role == "admin"
   end
 
 end

@@ -27,12 +27,20 @@ describe User do
       it {should have_valid(:role).when('user', 'admin')}
       it {should_not have_valid(:role).when('toothfairy', 'monkeyface')}
     end
+
     describe 'methods' do
-      it 'user exists as an admin' do
+      it 'ensures that user is an admin' do
         administrator = FactoryGirl.build(:user, role: "admin")
-        user = FactoryGirl.build(:user)
+
         expect(administrator.admin?).to eq(true)
-        expect(user.admin?).to eq(false)
-       end
+      end
+
+      it 'ensures that user is not an admin' do
+        user = FactoryGirl.build(:user)
+        expect(user.admin?).to eql(false)
+
+        user.role = 'admin'
+        expect(user.admin?).to eq(true)
+      end
     end
-end
+  end
