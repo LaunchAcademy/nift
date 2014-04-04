@@ -5,4 +5,10 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   validates :username, presence: true, uniqueness: { case_sensitive: false }
+  validates :role, presence: true, inclusion: {in: %w(admin user)}
+
+  def admin?
+    role == "admin"
+  end
+
 end
