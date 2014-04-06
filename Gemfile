@@ -11,6 +11,8 @@ gem 'jbuilder', '~> 1.2'
 gem 'simple_form'
 gem 'foundation-rails'
 gem 'devise'
+gem 'carrierwave'
+gem 'rmagick'
 
 group :doc do
   gem 'sdoc', require: false
