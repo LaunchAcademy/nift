@@ -26,7 +26,7 @@ feature 'a user creates a new product', %q{
     prior_company_count = Company.count
 
     visit new_products_path
-    fill_in 'Product Name', with: "Bannanas"
+    fill_in 'Product Name', with: "Bananas"
     fill_in 'Company Name', with: "Launch Academy"
 
     fill_in 'Company Website', with: "www.launchAcademy.com"

@@ -41,10 +41,7 @@ RSpec.configure do |config|
   #     --seed 1234
   config.order = "random"
 
-<<<<<<< HEAD
   config.include FormCompletionHelper
-=======
-  config.include SignUpHelper
 
   config.before(:suite) do
     DatabaseCleaner.strategy = :transaction
@@ -58,6 +55,4 @@ RSpec.configure do |config|
   config.after(:each) do
     DatabaseCleaner.clean
   end
-
->>>>>>> 21e7098f8c59f8df1a2325524b6a62d176b8ab03
 end
