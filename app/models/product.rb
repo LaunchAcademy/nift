@@ -8,6 +8,7 @@ class Product < ActiveRecord::Base
   belongs_to :company
   has_many :categorizations
   has_many :categories, through: :categorizations
+  has_many :reviews
   accepts_nested_attributes_for :company
 
   def self.search(query)
