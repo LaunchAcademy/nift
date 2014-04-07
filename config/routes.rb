@@ -1,9 +1,9 @@
 Nifty::Application.routes.draw do
 
-  resource :products, only: [:create, :new]
+  resource :products, only: [:create, :new, :index]
 
   devise_for :users
-  root to: 'home#index'
+  root to: 'products#index'
 
   # resources :nifty, only: [:new, :create]
   # The priority is based upon order of creation: first created -> highest priority.

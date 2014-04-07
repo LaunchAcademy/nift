@@ -14,7 +14,6 @@ feature 'reset password', %Q{
 
   scenario 'user clicks the reset password option' do
     visit root_path
-    save_and_open_page
   end
 
 
