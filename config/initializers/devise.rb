@@ -245,7 +245,7 @@ Devise.setup do |config|
   # When using Devise inside an engine, let's call it `MyEngine`, and this engine
   # is mountable, there are some extra configurations to be taken into account.
   # The following options are available, assuming the engine is mounted as:
-  #
+  config.secret_key = '1bf934bb1fd4abc664c9a38a4ee2d76c1ccea38cd93c51270cc7e6dd5c151919014a9587db5fbb615829f2efc7a2ffbb987bcf37c3a822ebbafc84fe2cd6ac36'
   #     mount MyEngine, at: '/my_engine'
   #
   # The router that invoked `devise_for`, in the example above, would be:

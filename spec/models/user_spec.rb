@@ -16,28 +16,27 @@ describe User do
     it {should_not have_valid(:password).when(*blank)}
     it {should_not have_valid(:password).when('1234')}
 
-
-      it 'is valid when given valid attributes' do
-        expect(user).to be_valid
-      end
-
-      it {should have_valid(:role).when('user', 'admin')}
-      it {should_not have_valid(:role).when('toothfairy', 'monkeyface')}
+    it 'is valid when given valid attributes' do
+      expect(user).to be_valid
     end
 
-    describe 'methods' do
-      it 'ensures that user is an admin' do
-        administrator = FactoryGirl.build(:user, role: "admin")
+    it {should have_valid(:role).when('user', 'admin')}
+    it {should_not have_valid(:role).when('toothfairy', 'monkeyface')}
+  end
 
-        expect(administrator.admin?).to eq(true)
-      end
+  describe 'methods' do
+    it 'ensures that user is an admin' do
+      administrator = FactoryGirl.build(:user, role: "admin")
 
-      it 'ensures that user is not an admin' do
-        user = FactoryGirl.build(:user)
-        expect(user.admin?).to eql(false)
+      expect(administrator.admin?).to eq(true)
+    end
 
-        user.role = 'admin'
-        expect(user.admin?).to eq(true)
-      end
+    it 'ensures that user is not an admin' do
+      user = FactoryGirl.build(:user)
+      expect(user.admin?).to eql(false)
+
+      user.role = 'admin'
+      expect(user.admin?).to eq(true)
     end
   end
+end

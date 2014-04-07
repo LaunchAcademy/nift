@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
 
   def index
-    @products = Product.all
+    @products = Product.limit(20)
   end
 
   def new
@@ -19,7 +19,7 @@ class ProductsController < ApplicationController
     if @product.save
       redirect_to root_path, notice: "You just created a new Product"
     else
-      render 'new'
+      render :new
     end
   end
 

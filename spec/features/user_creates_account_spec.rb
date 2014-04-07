@@ -19,10 +19,9 @@ feature 'user creates an account', %q{
 
     visit root_path
     user = FactoryGirl.build(:user)
-    click_on 'Sign up'
+    click_on 'Sign Up'
     fill_out_form(user)
     click_on 'Sign up'
-
 
     expect(User.count).to eq(count + 1)
   end

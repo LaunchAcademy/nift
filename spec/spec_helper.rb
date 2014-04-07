@@ -41,7 +41,6 @@ RSpec.configure do |config|
   #     --seed 1234
   config.order = "random"
 
-
   config.before(:suite) do
     DatabaseCleaner.strategy = :transaction
     DatabaseCleaner.clean_with(:truncation)
@@ -55,7 +54,5 @@ RSpec.configure do |config|
     DatabaseCleaner.clean
   end
 
-
   config.include FormCompletionHelper
-
 end
