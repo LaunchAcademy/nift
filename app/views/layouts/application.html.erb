@@ -26,9 +26,16 @@
 
     <!-- Left Nav Section -->
     <ul class="left">
-      <li><a href="#">Sign In</a></li>
-      <li><a href="#">Sign Up</a></li>
-      <li><%= link_to 'New Product', new_products_path %></li>
+
+      <% if !user_signed_in? %>
+        <li><%= link_to 'Sign In', new_user_session_path %></li>
+        <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+      <% end %>
+
+      <% if user_signed_in? %>
+        <li> <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+        <li><%= link_to 'New Product', new_product_path %></li>
+      <% end %>
     </ul>
 
 
@@ -44,19 +51,22 @@
     <ul class="right">
       <li class="has-form">
         <div class="row collapse">
+        <%= form_tag('/products/search', method: :get) do %>
           <div class="large-8 small-9 columns">
-            <input type="text" placeholder="Search..">
+            <%= text_field_tag :query%>
           </div>
           <div class="large-4 small-3 columns">
-            <a href="#" class="button expand">Go</a>
+            <%= submit_tag 'Submit', class: "button expand" %>
           </div>
+        <% end %>
         </div>
       </li>
     </ul>
-
   </section>
 </nav>
     <%= render 'layouts/messages' %>
+
+
     <%= yield %>
     <%= javascript_include_tag "application" %>
 
