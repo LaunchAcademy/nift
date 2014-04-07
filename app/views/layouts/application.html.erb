@@ -1,14 +1,79 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Nifty</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<%= yield %>
+    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
 
-</body>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+ <body>
+<nav class="top-bar" data-topbar>
+
+
+  <ul class="title-area">
+    <li class="name">
+
+    </li>
+    <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+  </ul>
+
+  <section class="top-bar-section">
+
+    <!-- Left Nav Section -->
+    <ul class="left">
+
+      <% if !user_signed_in? %>
+        <li><%= link_to 'Sign In', new_user_session_path %></li>
+        <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+      <% end %>
+
+      <% if user_signed_in? %>
+        <li> <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+        <li><%= link_to 'New Product', new_product_path %></li>
+      <% end %>
+    </ul>
+
+
+
+    <!-- Center Nav Section -->
+
+    <div id="company_name">
+    <h1><a href="/">Nifty</a></h1>
+    </div>
+
+
+    <!-- Right Nav Section -->
+    <ul class="right">
+      <li class="has-form">
+        <div class="row collapse">
+        <%= form_tag('/products/search', method: :get) do %>
+          <div class="large-8 small-9 columns">
+            <%= text_field_tag :query%>
+          </div>
+          <div class="large-4 small-3 columns">
+            <%= submit_tag 'Submit', class: "button expand" %>
+          </div>
+        <% end %>
+        </div>
+      </li>
+    </ul>
+  </section>
+</nav>
+    <%= render 'layouts/messages' %>
+
+
+    <%= yield %>
+    <%= javascript_include_tag "application" %>
+
+
+
+
+
+
+  </body>
 </html>

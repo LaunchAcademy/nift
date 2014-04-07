@@ -5,6 +5,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   validates :username, presence: true, uniqueness: { case_sensitive: false }
+
+  has_many :products
+
   validates :role, presence: true, inclusion: {in: %w(admin user)}
 
   def admin?

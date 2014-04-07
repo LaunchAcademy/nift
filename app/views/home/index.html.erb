@@ -1,10 +1,16 @@
-<h2>Home</h2>
+<br>
+<br>
+<div class="masonry js-masonry"  data-masonry-options='{ "columnWidth": 60, "gutter": 17}'>
+   <div class="product big"><span class ="caption">Product Name</span></div>
+  <div class="product"><span class ="caption">Product Name</span></div>
+  <div class="product"><span class ="caption">Product Name</span></div>
+  <div class="product small"><span class ="caption">Product Name</span></div>
 
-<div id="user_nav">
-  <% if user_signed_in? %>
-    Signed in as <%= current_user.username %>. Not you?
-    <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-  <% else %>
-    <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "Sign in", new_user_session_path %>
-  <% end %>
+  <div class="product"><span class ="caption">Product Name</span></div>
+  <div class="product small"><span class ="caption">Product Name</span></div>
+  <div class="product small"><span class ="caption">Product Name</span></div>
+  <div class="product small"><span class ="caption">Product Name</span></div>
+  <div class="product small"><span class ="caption">Product Name</span></div>
+
+
 </div>
