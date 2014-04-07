@@ -12,9 +12,12 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
     @product.company = @company
     @product.user = current_user
-    if @product.save
-      redirect_to root_path, notice: "You just created a new Product"
+    @product.image = ImageUploader.new(params[:image])
+
+    if @product.save # && @product.image.store!
+      redirect_to root_path, notice: "You just created a new product"
     else
+      render :new
     end
   end
 
@@ -26,7 +29,8 @@ class ProductsController < ApplicationController
       :description,
       :price,
       :url,
+      :image,
       company_attributes: [:name, :location, :url]
-      )
+    )
   end
 end

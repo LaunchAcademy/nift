@@ -14,13 +14,13 @@ module FormCompletionHelper
   end
 
   def fill_out_new_product_form
+    visit new_products_path
     fill_in 'Product Name', with: 'Fishsicle'
-    fill_in 'Company Name', with: 'Launch Academy'
-
-    fill_in 'Company Website', with: 'www.fishsicles.com'
-    fill_in 'Location', with: 'Bar Harbor, ME'
     fill_in 'Description', with: 'now in peanut butter & sardine flavor'
-    fill_in 'Product Website', with: 'www.fishsicles.com'
     fill_in 'Price', with: '5'
+    fill_in 'Company Name', with: 'Launch Academy'
+    fill_in 'Location', with: 'Bar Harbor, ME'
+    fill_in 'Company Website', with: 'www.fishsicles.com'
+    fill_in 'Product Website', with: 'www.fishsicles.com'
   end
 end

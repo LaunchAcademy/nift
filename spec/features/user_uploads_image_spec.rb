@@ -17,26 +17,32 @@ feature 'user uploads an image', %q{
   scenario 'uploads an image' do
     user = FactoryGirl.create(:user)
     sign_in_as(user)
-
-    visit new_products_path
     fill_out_new_product_form
     attach_file('product_image', Rails.root + 'spec/fixtures/images/pie_eating_contest.jpg')
     click_on 'Submit'
 
     product = Product.find(user.id)
-    expect(product.image).to_not be_nil
-    expect(@uploader.small).to have_dimensions(200, 200)
+    expect(product.image).not_to be_nil
   end
 
   scenario 'adds an image from a remote url' do
     user = FactoryGirl.create(:user)
     sign_in_as(user)
-
-    visit new_products_path
     fill_out_new_product_form
-    fill_in 'or image URL', with: 'http://memeheroes.com/c/99bde-im-bubble-tea.jpg'
+    fill_in 'product_remote_image_url', with: 'http://memeheroes.com/c/99bde-im-bubble-tea.jpg'
     click_on 'Submit'
+
+    product = Product.find(user.id)
+    expect(product.image).not_to be_nil
   end
 
-  scenario 'attach an invalid file'
+  scenario 'attaches an invalid file' do
+    user = FactoryGirl.create(:user)
+    sign_in_as(user)
+    fill_out_new_product_form
+    attach_file('product_image', Rails.root + 'spec/fixtures/images/Computer-Stress.gif')
+    click_on 'Submit'
+
+    expect(something_bad_to_happen)
+  end
 end

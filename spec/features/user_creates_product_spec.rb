@@ -26,19 +26,19 @@ feature 'a user creates a new product', %q{
     prior_company_count = Company.count
 
     visit new_products_path
-    fill_in 'Product Name', with: "Bananas"
-    fill_in 'Company Name', with: "Launch Academy"
-
-    fill_in 'Company Website', with: "www.launchAcademy.com"
-    fill_in 'Location', with: "New York"
-    fill_in 'Description', with: "Wooah"
-    fill_in 'Product Website', with: "www.amazon.com"
-    fill_in 'Price', with: "45"
+    fill_out_new_product_form
     click_on 'Submit'
 
     expect(Product.count).to eq(prior_product_count + 1)
     expect(Company.count).to eq(prior_company_count + 1)
     expect(page).to have_content("You just created a new Product")
+  end
 
+  scenario 'leave fields blank' do
+    user = FactoryGirl.create(:user)
+    sign_in_as(user)
+    click_on 'Submit'
+
+    expect(page).to have_content("can't be blank")
   end
 end

@@ -11,7 +11,7 @@ gem 'simple_form'
 gem 'foundation-rails'
 gem 'devise'
 gem 'carrierwave'
-gem 'rmagick'
+gem 'rmagick', require: false
 
 group :doc do
   gem 'sdoc', require: false

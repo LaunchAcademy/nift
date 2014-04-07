@@ -5,24 +5,28 @@ describe ImageUploader do
 
   before do
     MyUploader.enable_processing = true
-    @uploader = MyUploader.new(@user, :avatar)
-    @uploader.store!(File.open(path_to_file))
+    @image = ImageUploader.new(@user, :avatar)
+    @image.store!(File.open(path_to_file))
   end
 
   after do
     MyUploader.enable_processing = false
-    @uploader.remove!
+    @image.remove!
   end
 
   context 'thumbnail' do
-    it 'should have the right dimensions'
+    it 'should have the right dimensions' do
+      expect(@image.thumb).to have_dimensions(50, 50)
+    end
   end
 
   context 'small' do
     it 'should have the right dimensions'
+      expect(@image.small).to be_no_larger_than(200, 200)
   end
 
-  context 'full size' do
-    it 'should have the right dimensions'
+
+  it 'should make the image readable only to the owner and not executable' do
+    expect(@image).to have_permissions(0600)
   end
 end
