@@ -12,6 +12,7 @@ gem 'foundation-rails'
 gem 'devise'
 gem 'carrierwave'
 gem 'rmagick', require: false
+gem 'fog'
 
 group :doc do
   gem 'sdoc', require: false
