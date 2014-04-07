@@ -1,0 +1,89 @@
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body { font-family: sans-serif; }
+
+.masonry {
+  margin: 2em auto;
+  max-width: 90%;
+}
+
+.masonry .product {
+  width:  15em;
+  height: 15em;
+  float: left;
+  margin-bottom: 2.5em;
+  background: #91BAEA;;
+  border-radius: 5px;
+  text-align: center;
+
+ }
+
+.product .caption{
+  position: relative;
+  top: 50px;
+  .big{
+    top: 200px;
+  }
+}
+
+.product.big {
+
+  width:  30em;
+  height:  30em;
+
+}
+
+.product.small {
+
+  width:  7.5em;
+  height:  7.5em;
+
+}
+
+.product_name{
+  position: relative;
+  left: 0;
+
+}
+
+#company_name{
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  width: 100px;
+  height: 45px;
+  margin-left: -50px;
+
+  text-align: center;
+  a{
+    color: white;
+  }
+  h1{
+    margin: 0 auto;
+    line-height: 45px;
+    font-size: 25px;
+  }
+}
+
+
+
+/*On smaller Screens Hide Company Name*/
+@media only screen and (max-width: 40em) {
+
+  #company_name{display: none;}
+
+}
+
+
+
+
+
+
+
+
+
+
