@@ -23,7 +23,7 @@ feature 'user creates an account', %q{
     fill_out_form(user)
     click_on 'Sign up'
 
-    expect(current_path).to eq(root_path)
+
     expect(User.count).to eq(count + 1)
   end
 
