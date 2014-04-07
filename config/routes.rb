@@ -1,8 +1,10 @@
 Nifty::Application.routes.draw do
-  resource :products, only: [:create, :new]
+  resources :products, only: [:index, :show, :new, :create] do
+    get 'search', on: :collection
+  end
 
   devise_for :users
-  root to: 'home#index'
+  root 'products#index'
 end
 
   # resources :nifty, only: [:new, :create]

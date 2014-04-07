@@ -7,7 +7,7 @@ FactoryGirl.define do
   end
 
   factory :product do
-    name 'Portable Iceberg Lettuce Synthetic Grinder'
+    sequence(:name) { |n| "Portable Iceberg Lettuce Synthetic Grinder #{n}"}
     description 'Just your everyday Grinder'
     url 'check out amazon'
     price '9.99'
@@ -16,7 +16,7 @@ FactoryGirl.define do
   end
 
   factory :company do
-    name 'Wayne Industries'
+    sequence(:name) { |n| "Wayne Industries #{n}"}
     location 'Gotham City'
     url 'www.wayneindustries.com'
   end

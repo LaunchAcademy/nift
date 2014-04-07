@@ -1,6 +1,9 @@
 class ProductsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create]
 
-  before_action :authenticate_user!
+  def index
+    @products = Product.limit(20)
+  end
 
   def new
     @product = Product.new
@@ -14,14 +17,22 @@ class ProductsController < ApplicationController
     @product.user = current_user
     @product.image = ImageUploader.new(params[:image])
 
-    if @product.save # && @product.image.store!
+    if @product.save
       redirect_to root_path, notice: "You just created a new product"
     else
       render :new
     end
   end
 
+  def search
+    @products = Product.search("%#{query_params}%")
+  end
+
   private
+
+  def query_params
+    params.require(:query)
+  end
 
   def product_params
     params.require(:product).permit(

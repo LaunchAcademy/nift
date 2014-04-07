@@ -9,5 +9,10 @@ class Product < ActiveRecord::Base
   has_many :categorizations
   has_many :categories, through: :categorizations
   accepts_nested_attributes_for :company
+
   mount_uploader :image, ImageUploader
+
+  def self.search(query)
+    where('LOWER(name) like LOWER(?) or LOWER(description) like LOWER(?)', query, query)
+  end
 end

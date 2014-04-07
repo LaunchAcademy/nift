@@ -3,6 +3,7 @@ require 'spec_helper'
 describe User do
   describe 'validations' do
     let(:blank) {['', nil]}
+
     user = FactoryGirl.build(:user)
 
     it {should have_valid(:username).when(user.username)}
@@ -18,17 +19,16 @@ describe User do
     it 'is valid when given valid attributes' do
       expect(user).to be_valid
     end
-
-    it {should have_valid(:role).when('user', 'admin')}
-    it {should_not have_valid(:role).when('toothfairy', 'monkeyface')}
-    end
+  end
 
   describe 'methods' do
     it 'ensures that user is an admin' do
       administrator = FactoryGirl.build(:user, role: "admin")
-
       expect(administrator.admin?).to eq(true)
     end
+
+    it {should have_valid(:role).when('user', 'admin')}
+    it {should_not have_valid(:role).when('toothfairy', 'monkeyface')}
 
     it 'ensures that user is not an admin' do
       user = FactoryGirl.build(:user)

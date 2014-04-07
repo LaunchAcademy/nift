@@ -4,12 +4,18 @@
           box-sizing: border-box;
 }
 
-body { font-family: sans-serif; }
+body { font-family: sans-serif;   margin: 2em auto;
+  max-width: 90%;}
 
-.masonry {
+.input_form{
   margin: 2em auto;
-  max-width: 90%;
+  max-width: 40%;
 }
+
+.right{
+  float:right;
+}
+
 
 .masonry .product {
   width:  15em;

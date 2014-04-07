@@ -23,7 +23,6 @@ feature 'user creates an account', %q{
     fill_out_registration_form(user)
     click_on 'Sign up'
 
-
     expect(User.count).to eq(count + 1)
   end
 
