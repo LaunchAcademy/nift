@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 <h3>NIFT</h3>
 
 <% 20.times do %>
   <div class='product_image'></div>
+=======
+<% @products.each do |product| %>
+  <h1><%= product.name %></h1>
+  <%= product.description %>
+>>>>>>> master
 <% end %>

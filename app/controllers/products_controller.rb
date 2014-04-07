@@ -1,6 +1,9 @@
 class ProductsController < ApplicationController
-
   before_action :authenticate_user!, only: [:new, :create]
+
+  def index
+    @products = Product.all
+  end
 
   def new
     @product = Product.new
@@ -12,6 +15,7 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
     @product.company = @company
     @product.user = current_user
+
     if @product.save
       redirect_to root_path, notice: "You just created a new Product"
     else
@@ -19,11 +23,15 @@ class ProductsController < ApplicationController
     end
   end
 
-  def index
-    @products = Product.all
+  def search
+    @products = Product.search("%#{query_params}%")
   end
 
   private
+
+  def query_params
+    params.require(:query)
+  end
 
   def product_params
     params.require(:product).permit(

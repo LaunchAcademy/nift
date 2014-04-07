@@ -1,0 +1,15 @@
+<h1>Search Results</h1>
+
+<% if @products.nil? %>
+  <p>No results found.</p>
+<% else %>
+
+  <p><%= "#{@products.count} result(s) found." %></p>
+
+  <ul>
+    <% @products.each do |product| %>
+      <li><%= product.name %></li>
+    <% end %>
+  </ul>
+
+<% end %>

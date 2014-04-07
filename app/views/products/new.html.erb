@@ -1,6 +1,8 @@
-<h1>Create a New Product</h1>
 
-
+<div class="input_form">
+  <h1>Create a New Product</h1>
+  <div class="right">*Required Fields</div>
+  <br>
  <%= simple_form_for @product do |f| %>
    <%= f.input :name, label: "Product Name" %>
    <%= f.input :description %>
@@ -17,3 +19,4 @@
  <% end %>
 
 
+</div>

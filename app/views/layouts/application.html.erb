@@ -11,61 +11,50 @@
     <%= csrf_meta_tags %>
   </head>
 
- <body>
-<nav class="top-bar" data-topbar>
+  <body>
+    <nav class="top-bar" data-topbar>
+      <ul class="title-area">
+        <li class="name"></li>
+        <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+      </ul>
 
+      <section class="top-bar-section">
 
-  <ul class="title-area">
-    <li class="name">
+        <ul class="left">
+          <% if user_signed_in? %>
+            <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+          <% else %>
+            <li><%= link_to 'Sign In', new_user_session_path %></li>
+            <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+          <% end %>
+          <li><%= link_to 'New Product', new_products_path %></li>
+        </ul>
 
-    </li>
-    <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
-  </ul>
-
-  <section class="top-bar-section">
-
-    <!-- Left Nav Section -->
-    <ul class="left">
-      <% if user_signed_in? %>
-        <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
-      <% else %>
-        <li><a href="/users/sign_in">Sign In</a></li>
-        <li><a href="/users/sign_up">Sign Up</a></li>
-      <% end %>
-      <li><%= link_to 'New Product', new_products_path %></li>
-    </ul>
-
-    <!-- Center Nav Section -->
-
-    <div id="company_name">
-    <h1><a href="/">Nifty</a></h1>
-    </div>
-
-
-    <!-- Right Nav Section -->
-    <ul class="right">
-      <li class="has-form">
-        <div class="row collapse">
-          <div class="large-8 small-9 columns">
-            <input type="text" placeholder="Search..">
-          </div>
-          <div class="large-4 small-3 columns">
-            <a href="#" class="button expand">Go</a>
-          </div>
+        <div id="company_name">
+        <h1><a href="/">Nifty</a></h1>
         </div>
-      </li>
-    </ul>
 
-  </section>
-</nav>
+        <ul class="right">
+          <li class="has-form">
+            <div class="row collapse">
+            <%= form_tag('/products/search', method: :get) do %>
+              <div class="large-8 small-9 columns">
+                <%= text_field_tag :query%>
+              </div>
+              <div class="large-4 small-3 columns">
+                <%= submit_tag 'Submit', class: "button expand" %>
+              </div>
+            <% end %>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </nav>
+
     <%= render 'layouts/messages' %>
+
     <%= yield %>
     <%= javascript_include_tag "application" %>
-
-
-
-
-
 
   </body>
 </html>
