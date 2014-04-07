@@ -9,5 +9,5 @@ class Product < ActiveRecord::Base
   has_many :categorizations
   has_many :categories, through: :categorizations
   accepts_nested_attributes_for :company
-
+  mount_uploader :image, ImageUploader
 end

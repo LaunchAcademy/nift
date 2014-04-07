@@ -1,7 +1,6 @@
 <h1>Create a New Product</h1>
 
-
- <%= simple_form_for @product do |f| %>
+ <%= simple_form_for @product, html: {multipart: true} do |f| %>
    <%= f.input :name, label: "Product Name" %>
    <%= f.input :description %>
    <%= f.input :price %>
@@ -13,6 +12,13 @@
     <% end %>
 
    <%= f.input :url, label: "Product Website" %>
+
+   <div>
+     <p>Please include an image of the product:</p>
+     <%= f.file_field :image %>
+     <%= f.text_field :remote_image_url, placeholder: '...or enter image URL' %>
+   </div>
+
    <%= f.button :submit, "Submit" %>
  <% end %>
 

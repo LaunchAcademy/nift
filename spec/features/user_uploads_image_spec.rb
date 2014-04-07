@@ -14,25 +14,28 @@ feature 'user uploads an image', %q{
   # A thumbnail of the picture is displayed next to the post
   # Clicking the thumbnail opens the full size pic in a popup
 
-  scenario 'successfully attach an image' do
+  scenario 'uploads an image' do
     user = FactoryGirl.create(:user)
     sign_in_as(user)
 
     visit new_products_path
-    fill_in 'Product Name', with: 'Fishsicle'
-    fill_in 'Company Name', with: 'Launch Academy'
-
-    fill_in 'Company Website', with: 'www.fishsicles.com'
-    fill_in 'Location', with: 'Bar Harbor, ME'
-    fill_in 'Description', with: 'now in peanut butter & sardine flavor'
-    fill_in 'Product Website', with: 'www.fishsicles.com'
-    fill_in 'Price', with: '5'
-    click_on 'Add an image'
-    attach_file('Image', '../support/pie_eating_contest.jpg')
+    fill_out_new_product_form
+    attach_file('product_image', Rails.root + 'spec/fixtures/images/pie_eating_contest.jpg')
     click_on 'Submit'
 
     product = Product.find(user.id)
-    expect(product.image).to include('pie_eating_contest.jpg')
+    expect(product.image).to_not be_nil
+    expect(@uploader.small).to have_dimensions(200, 200)
+  end
+
+  scenario 'adds an image from a remote url' do
+    user = FactoryGirl.create(:user)
+    sign_in_as(user)
+
+    visit new_products_path
+    fill_out_new_product_form
+    fill_in 'or image URL', with: 'http://memeheroes.com/c/99bde-im-bubble-tea.jpg'
+    click_on 'Submit'
   end
 
   scenario 'attach an invalid file'
