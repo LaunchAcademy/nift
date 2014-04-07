@@ -5,7 +5,7 @@ Nifty::Application.routes.draw do
   end
 
   devise_for :users
-  root to: 'product#index'
+  root 'products#index'
 end
 
   # resources :nifty, only: [:new, :create]

@@ -13,27 +13,23 @@ feature 'user views products', %q{
   # *By default, the page displays 20 products
   # *The root url sends the user to the display page
 
-  scenario 'a logged-in user may see the hompage' do
+  scenario 'a registered user is sent to the index page after signing in' do
     user = FactoryGirl.create(:user)
     sign_in_as(user)
-    visit root_path
 
     expect(current_path).to eq('/')
-    expect(page).to have_css('div.product_image')
     expect(page).to have_content('Sign out')
   end
 
-  scenario 'a signed-out user can view the homepage' do
+  scenario 'all users see the index page when visiting the root url' do
     visit root_path
 
     expect(current_path).to eq('/')
-    expect(page).to have_css('div.product_image')
     expect(page).to have_content('Sign In')
   end
 
-  scenario 'user sees products displayed on home page' do
-    user = FactoryGirl.create(:user)
-    sign_in_as(user)
+  scenario 'user sees 20 products displayed on the index page' do
+    FactoryGirl.create_list(:product, 30)
     visit root_path
 
     expect(page).to have_css('div.product_image', count: 20)
