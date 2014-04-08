@@ -13,6 +13,7 @@ gem 'devise'
 gem 'carrierwave'
 gem 'rmagick', require: false
 gem 'fog'
+gem 'kaminari'
 
 group :doc do
   gem 'sdoc', require: false
