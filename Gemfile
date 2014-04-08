@@ -19,6 +19,7 @@ group :doc do
 end
 
 group :test, :development do
+  gem 'dotenv-rails'
   gem 'rspec-rails'
   gem 'factory_girl'
   gem 'pry-rails'
@@ -30,6 +31,7 @@ group :test do
   gem 'shoulda'
   gem 'launchy'
   gem 'database_cleaner'
+  gem 'fakefs', require: 'fakefs/safe'
 end
 
 group :development do

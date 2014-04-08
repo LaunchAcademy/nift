@@ -21,7 +21,7 @@ feature 'user uploads an image', %q{
     attach_file('product_image', Rails.root + 'spec/fixtures/images/pie_eating_contest.jpg')
     click_on 'Submit'
 
-    product = Product.find(user.id)
+    product = user.products.last
     expect(product.image).not_to be_nil
   end
 
@@ -31,8 +31,7 @@ feature 'user uploads an image', %q{
     fill_out_new_product_form
     fill_in 'product_remote_image_url', with: 'http://memeheroes.com/c/99bde-im-bubble-tea.jpg'
     click_on 'Submit'
-
-    product = Product.find(user.id)
+    product = Product.find_by(user_id: user.id)
     expect(product.image).not_to be_nil
   end
 
@@ -43,6 +42,6 @@ feature 'user uploads an image', %q{
     attach_file('product_image', Rails.root + 'spec/fixtures/images/H1N1_USA_Map.svg')
     click_on 'Submit'
 
-    expect(something_bad_to_happen)
+    expect(page).to have_content('You are not allowed to upload "svg" files')
   end
 end

@@ -16,6 +16,7 @@
     <%= f.input :url, label: "Product Website" %>
 
     <p>Please include an image of the product:</p>
+    <%= f.error :image %>
     <%= f.file_field :image %>
     <%= f.text_field :remote_image_url, placeholder: '...or enter image URL' %>
 

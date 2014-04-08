@@ -57,11 +57,15 @@ GEM
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
+    dotenv (0.9.0)
+    dotenv-rails (0.9.0)
+      dotenv (= 0.9.0)
     erubis (2.7.0)
     excon (0.32.1)
     execjs (2.0.2)
     factory_girl (4.4.0)
       activesupport (>= 3.0.0)
+    fakefs (0.5.2)
     fog (1.21.0)
       fog-brightbox
       fog-core (~> 1.21, >= 1.21.1)
@@ -209,7 +213,9 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   database_cleaner
   devise
+  dotenv-rails
   factory_girl
+  fakefs
   fog
   foundation-rails
   jbuilder (~> 1.2)
