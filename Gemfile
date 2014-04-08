@@ -32,7 +32,6 @@ group :test do
   gem 'shoulda'
   gem 'launchy'
   gem 'database_cleaner'
-  gem 'fakefs', require: 'fakefs/safe'
 end
 
 group :development do
