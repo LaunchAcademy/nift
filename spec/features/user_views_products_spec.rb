@@ -33,5 +33,8 @@ feature 'user views products', %q{
     visit root_path
 
     expect(page).to have_css('div.product_image', count: 20)
+
+    click_on '2'
+    expect(page).to have_css('div.product_image', count: 10)
   end
 end
