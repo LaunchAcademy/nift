@@ -1,0 +1,6 @@
+<%= simple_form_for [@product, @review] do |f| %>
+  <%= f.input :rating, collection: Review::RATING_VALUES %>
+  <%= f.input :comment %>
+  <%= f.submit%>
+<%- end -%>
+
