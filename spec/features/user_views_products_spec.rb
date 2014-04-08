@@ -31,7 +31,10 @@ feature 'user views products', %q{
   scenario 'user sees 20 products displayed on the index page' do
     FactoryGirl.create_list(:product, 30)
     visit root_path
-
+    save_and_open_page
     expect(page).to have_css('div.product_image', count: 20)
+
+    click_on '2'
+    expect(page).to have_css('div.product_image', count: 10)
   end
 end
