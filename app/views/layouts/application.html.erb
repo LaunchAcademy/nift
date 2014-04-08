@@ -12,46 +12,8 @@
   </head>
 
   <body>
-    <nav class="top-bar" data-topbar>
-      <ul class="title-area">
-        <li class="name"></li>
-        <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
-      </ul>
 
-      <section class="top-bar-section">
-
-        <ul class="left">
-          <% if user_signed_in? %>
-            <li><%= "Signed in as #{current_user.username}" %></li>
-            <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
-          <% else %>
-            <li><%= link_to 'Sign In', new_user_session_path %></li>
-            <li><%= link_to 'Sign Up', new_user_registration_path %></li>
-          <% end %>
-          <li><%= link_to 'New Product', new_product_path %></li>
-        </ul>
-
-        <div id="company_name">
-        <h1><a href="/">Nifty</a></h1>
-        </div>
-
-        <ul class="right">
-          <li class="has-form">
-            <div class="row collapse">
-            <%= form_tag('/products/search', method: :get) do %>
-              <div class="large-8 small-9 columns">
-                <%= text_field_tag :query%>
-              </div>
-              <div class="large-4 small-3 columns">
-                <%= submit_tag 'Search', class: "button expand" %>
-              </div>
-            <% end %>
-            </div>
-          </li>
-        </ul>
-      </section>
-    </nav>
-
+    <%= render 'layouts/nav_devise_form' %>
     <%= render 'layouts/messages' %>
 
     <%= yield %>
