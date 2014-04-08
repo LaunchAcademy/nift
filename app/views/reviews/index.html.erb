@@ -1,5 +1,14 @@
 <ul>
   <li><%=link_to 'New Review', new_product_review_path(@product) %></li>
-
-
 </ul>
+
+<h1><%=@product.name%></h1>
+<p><%=@product.description %></p>
+
+<%= @reviews.each do |review| %>
+  <ul>
+    <li><%= review.user.username %> </li>
+    <li><%= review.rating %> </li>
+    <li><%= review.comment %> </li>
+  </ul>
+<%- end -%>

@@ -1,7 +1,9 @@
 class ReviewsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create]
+
   def index
     @product = Product.find(params[:product_id])
-    @review  = @product.reviews
+    @reviews  = @product.reviews
   end
 
   def new
@@ -18,6 +20,9 @@ class ReviewsController < ApplicationController
     if @review.save
       flash[:notice] = "You're review has been successfully added."
       redirect_to product_reviews_path(@product)
+    else
+      flash[:notice] = "Please fill in the required fields."
+      render :new
     end
 
   end
