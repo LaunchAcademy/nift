@@ -17,10 +17,12 @@ class ProductsController < ApplicationController
     @product.user = current_user
     @product.image = ImageUploader.new(params[:image])
 
-    if @product.save
+    if @product.image.filename !~ (/([^\s]+(\.(?i)(jpg|jpeg|png|gif|bmp))$)/)
+      redirect_to new_product_path, notice: "Invalid image!"
+    elsif @product.save
       redirect_to root_path, notice: "You just created a new product"
     else
-      render :new
+      redirect_to new_product_path
     end
   end
 

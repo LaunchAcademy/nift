@@ -14,7 +14,7 @@ module FormCompletionHelper
   end
 
   def fill_out_new_product_form
-    visit new_products_path
+    visit new_product_path
     fill_in 'Product Name', with: 'Fishsicle'
     fill_in 'Description', with: 'now in peanut butter & sardine flavor'
     fill_in 'Price', with: '5'

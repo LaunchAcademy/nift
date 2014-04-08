@@ -40,7 +40,7 @@ feature 'user uploads an image', %q{
     user = FactoryGirl.create(:user)
     sign_in_as(user)
     fill_out_new_product_form
-    attach_file('product_image', Rails.root + 'spec/fixtures/images/Computer-Stress.gif')
+    attach_file('product_image', Rails.root + 'spec/fixtures/images/H1N1_USA_Map.svg')
     click_on 'Submit'
 
     expect(something_bad_to_happen)

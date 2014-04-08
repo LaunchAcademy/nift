@@ -1,7 +1,9 @@
 <h3>NIFT</h3>
 
 <% @products.each do |product| %>
-  <div class='product_image'></div>
-  <h1><%= product.name %></h1>
+  <div class='product_image'>
+    <%= image_tag(product.image) %>
+  </div>
+  <h3><%= product.name %></h1>
   <%= product.description %>
 <% end %>

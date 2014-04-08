@@ -4,13 +4,13 @@ describe ImageUploader do
   include CarrierWave::Test::Matchers
 
   before do
-    MyUploader.enable_processing = true
+    ImageUploader.enable_processing = true
     @image = ImageUploader.new(@user, :avatar)
     @image.store!(File.open(path_to_file))
   end
 
   after do
-    MyUploader.enable_processing = false
+    ImageUploader.enable_processing = false
     @image.remove!
   end
 
