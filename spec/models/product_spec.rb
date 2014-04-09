@@ -24,6 +24,6 @@ describe Product do
     it {should belong_to(:user)}
     it {should belong_to(:company)}
     it {should have_many(:categories).through(:categorizations)}
-    it {should have_many(:reviews)}
+    it {should have_many(:reviews).dependent(:destroy)}
   end
 end

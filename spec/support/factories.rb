@@ -20,4 +20,9 @@ FactoryGirl.define do
     location 'Gotham City'
     url 'www.wayneindustries.com'
   end
+
+  factory :review do
+    rating '5'
+    product
+  end
 end

@@ -6,9 +6,9 @@
 <p><%=@product.description %></p>
 
 <%= @reviews.each do |review| %>
-  <ul>
-    <li><%= review.user.username %> </li>
-    <li><%= review.rating %> </li>
-    <li><%= review.comment %> </li>
-  </ul>
+
+    <div><%= review.author.username %> </div>
+    <div><%= review.rating %> </div>
+    <div><%= review.comment %> </div>
+
 <%- end -%>

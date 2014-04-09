@@ -29,7 +29,6 @@ feature 'reviewer creates a review', %Q{
     expect(page).to have_content(product.name)
   end
 
-
   scenario 'A user must select a rating' do
     user    = FactoryGirl.create(:user)
     product = FactoryGirl.create(:product)
@@ -43,8 +42,6 @@ feature 'reviewer creates a review', %Q{
     expect(page).to have_content("can't be blank")
   end
 
-
-
   scenario 'a signed out user cannot create a review' do
     product = FactoryGirl.create(:product)
 
@@ -54,6 +51,7 @@ feature 'reviewer creates a review', %Q{
     click_on 'New Review'
     expect(current_path).to eq('/users/sign_in')
   end
+
 
 
 
