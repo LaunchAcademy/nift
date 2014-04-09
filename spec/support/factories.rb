@@ -1,6 +1,6 @@
 
 FactoryGirl.define do
-  factory :user do
+  factory :user, aliases: [:author] do
     sequence(:username) { |n| "George Jetson#{n}" }
     sequence(:email) { |n| "gj#{n}@gmail.com" }
     password '12345678'
@@ -24,5 +24,6 @@ FactoryGirl.define do
   factory :review do
     rating '5'
     product
+    author
   end
 end

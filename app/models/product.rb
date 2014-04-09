@@ -15,4 +15,6 @@ class Product < ActiveRecord::Base
     where('LOWER(name) like LOWER(?) or LOWER(description) like LOWER(?)', query, query)
   end
 
+  paginates_per 20
+
 end
