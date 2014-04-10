@@ -1,6 +1,14 @@
 body {
   color: #ffffff;
   background-color: black;
+  font-family: gill sans, helvetica;
+}
+
+.signed_in_as {
+  color: #A8CD1B;
+  background-color: #005A31;
+  font-size: .8em;
+  padding: 13px 10px 12px 10px;
 }
 
 .nift {
@@ -21,26 +29,30 @@ body {
 
 .line {
   color: #A8CD1B;
+  /*color: #0066CC;*/
 }
 
 .main_image {
-
+  /*prevent image from scaling or moving when resizing browser*/
 }
 
 * {
+  box-sizing: border-box;
   -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
+  -moz-box-sizing: border-box;
 }
 
 .productFilter {
-  margin-top: 10px;
+  margin: 16px auto;
+  padding-left: 16px;
   display: block;
 }
 
 .productFilter a {
     margin-right: 10px;
-    color:#777;
+    color:#888;
+    /*color: #0066CC;*/
+    /*color: rgb(210,10,10);*/
     text-decoration:none;
 }
 

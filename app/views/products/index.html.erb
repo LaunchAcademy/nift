@@ -7,26 +7,26 @@
 </div>
 
 <div class='main_content small-12 medium-12 large-12 columns'>
-  <div class='text_box small-12 medium-3 large-4 columns'>
+  <div class='text_box small-12 medium-4 large-4 columns'>
     <p class='nift'>NIFT</p>
     <ul class='no-bullet'>
       <li>Some text about Nift</li>
       <li>more words about Nift</li>
-      <p class='line'>_____________________________</p>
+      <p class='line'>_______________________</p>
       <li>Anything else we want to say</li>
       <li>more of the same</li>
       <li>still more of the same</li>
     </ul>
   </div>
 
-  <div class='main_image small-12 medium-9 large-8 columns'>
+  <div class='main_image small-12 medium-8 large-8 columns'>
     <img src='http://media-cdn.tripadvisor.com/media/photo-s/03/9b/2f/47/boston.jpg'>
   </div>
 </div>
 
 <div class='isotope js-isotope small-12 medium-12 large-12 columns' id='productContainer'>
   <% @products.each do |product| %>
-    <!-- if/elsif/elslif/else control flow for choosing image size class based on sorting criterion -->
+    <!-- if/elsif/else control flow for choosing image size class based on sorting criterion -->
     <a class='product_image size<%="#{[1,1,1,2,2,3].sample}"%>' href='<%= product_path(product)%>'>
       <%= image_tag(product.image.large, class: 'image') unless product.image.nil? %>
       <div class='description'>
