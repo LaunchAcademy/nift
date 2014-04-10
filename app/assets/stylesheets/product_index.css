@@ -3,12 +3,24 @@ body {
   background-color: black;
 }
 
+.nift {
+  font-family: gill sans, helvetica;
+  font-style: oblique;
+  font-weight: bold;
+  font-size: 4em;
+  color: #A8CD1B;
+}
+
 .main_content {
   display: block;
 }
 
 .text_box {
   margin-top: 30px;
+}
+
+.line {
+  color: #A8CD1B;
 }
 
 .main_image {
@@ -21,9 +33,14 @@ body {
           box-sizing: border-box;
 }
 
+.productFilter {
+  margin-top: 10px;
+  display: block;
+}
+
 .productFilter a {
     margin-right: 10px;
-    color:#666;
+    color:#777;
     text-decoration:none;
 }
 
@@ -158,9 +175,9 @@ img {
 .arrow {
   width: 0;
   height: 0;
-  border-left: 7px solid transparent;
-  border-right: 7px solid transparent;
-  border-bottom: 12px solid red;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 10px solid red;
   margin-right: 10px;
   float: right;
 }

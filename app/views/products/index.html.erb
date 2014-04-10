@@ -8,16 +8,14 @@
 
 <div class='main_content small-12 medium-12 large-12 columns'>
   <div class='text_box small-12 medium-3 large-4 columns'>
+    <p class='nift'>NIFT</p>
     <ul class='no-bullet'>
-      <li>hello hello hello hello</li>
-      <li>hello hello hello hello</li>
-      <br>
-      <li>hello hello hello hello</li>
-      <li>hello hello hello hello</li>
-      <li>hello hello hello hello</li>
-      <br>
-      <li>hello hello hello hello</li>
-      <li>hello hello hello hello</li>
+      <li>Some text about Nift</li>
+      <li>more words about Nift</li>
+      <p class='line'>_____________________________</p>
+      <li>Anything else we want to say</li>
+      <li>more of the same</li>
+      <li>still more of the same</li>
     </ul>
   </div>
 
@@ -30,9 +28,9 @@
   <% @products.each do |product| %>
     <!-- if/elsif/elslif/else control flow for choosing image size class based on sorting criterion -->
     <a class='product_image size<%="#{[1,1,1,2,2,3].sample}"%>' href='<%= product_path(product)%>'>
-      <%= image_tag(product.image.large, class: 'image') %>
+      <%= image_tag(product.image.large, class: 'image') unless product.image.nil? %>
       <div class='description'>
-        <p class='product_title'>Product Title<span class='arrow'></span></p>
+        <p class='product_title'>Sample title <%= product.name %><span class='arrow'></span></p>
         <p class='product_details'>This is a sample description. It has more details about the product in the picture.</p>
       </div>
     </a>
