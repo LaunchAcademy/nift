@@ -56,11 +56,13 @@ $body-font-family: "Gill Sans", Helvetica, Arial, sans-serif;
 // $default-float: left;
 
 // We use these as default colors throughout
-$primary-color: #A8CD1B;
-$secondary-color: #F3FAB6;
+$primary-color: #FF7F12;
+$secondary-color: #C40A5A;
 // $alert-color: #f04124;
-$success-color: #005A31;
+// $success-color: #005A31;
+$success-color: #01939A;
 // $warning-color: #f08a24;
+$warning-color: #C40A5A;
 // $info-color: #a0d3e8;
 
 // We use these to make sure border radius matches unless we want it different.
@@ -122,6 +124,7 @@ $global-radius: 0;
 // $header-font-weight: normal;
 // $header-font-style: normal;
 // $header-font-color: #222;
+$header-font-color: #FF7F12;
 // $header-line-height: 1.4;
 // $header-top-margin: .2rem;
 // $header-bottom-margin: .5rem;
@@ -485,13 +488,13 @@ $global-radius: 0;
 // $form-label-font-size: rem-calc(14);
 // $form-label-font-weight: normal;
 // $form-label-line-height: 1.5;
-// $form-label-font-color: scale-color(#000, $lightness: 30%);
+$form-label-font-color: scale-color(#888, $lightness: 30%);
 // $form-label-bottom-margin: 0;
 // $input-font-family: inherit;
 // $input-font-color: rgba(0,0,0,0.75);
-// $input-font-size: rem-calc(14);
-// $input-bg-color: #fff;
-// $input-focus-bg-color: scale-color(#fff, $lightness: -2%);
+$input-font-size: rem-calc(16);
+$input-bg-color: #777;
+$input-focus-bg-color: scale-color(#fff, $lightness: -5%);
 // $input-border-color: scale-color(#fff, $lightness: -20%);
 // $input-focus-border-color: scale-color(#fff, $lightness: -40%);
 // $input-border-style: solid;
@@ -499,7 +502,7 @@ $global-radius: 0;
 // $input-border-radius: $global-radius;
 // $input-disabled-bg: #ddd;
 // $input-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
-// $input-include-glowing-effect: true;
+$input-include-glowing-effect: false;
 
 // We use these to style the fieldset border and spacing.
 // $fieldset-border-style: solid;
@@ -1132,7 +1135,7 @@ $global-radius: 0;
 
 // Background color for the top bar
 // $topbar-bg: $topbar-bg-color;
-$topbar-bg: #005A31;
+// $topbar-bg: #005A31;
 
 // Height and margin
 // $topbar-height: 45px;
@@ -1153,14 +1156,14 @@ $topbar-title-font-style: oblique;
 // $topbar-dropdown-toggle-alpha: 0.4;
 
 // Set the link colors and styles for top-level nav
-$topbar-link-color: #A8CD1B;
-$topbar-link-color-hover: #F3FAB6;
-$topbar-link-color-active: #F3FAB6;
-$topbar-link-color-active-hover: #F3FAB6;
+// $topbar-link-color: #A8CD1B;
+// $topbar-link-color-hover: #F3FAB6;
+// $topbar-link-color-active: #F3FAB6;
+// $topbar-link-color-active-hover: #F3FAB6;
 // $topbar-link-weight: normal;
 // $topbar-link-font-size: rem-calc(13);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
-$topbar-link-bg-hover: #006A31;
+// $topbar-link-bg-hover: #006A31;
 // $topbar-link-bg-active: $primary-color;
 // $topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);
 // $topbar-link-font-family: $body-font-family;

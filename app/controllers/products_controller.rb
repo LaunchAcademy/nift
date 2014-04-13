@@ -17,7 +17,7 @@ class ProductsController < ApplicationController
     @product.user = current_user
 
     if @product.save
-      redirect_to root_path, notice: "You just created a new product"
+      redirect_to root_path, notice: "Product submitted!"
     else
       render :new
     end

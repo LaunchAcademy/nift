@@ -1,23 +1,28 @@
 body {
   color: #ffffff;
-  background-color: black;
+  background-color: #262626;
   font-family: gill sans, helvetica;
 }
 
 .signed_in_as {
-  color: #A8CD1B;
-  background-color: #005A31;
+  color: #888;
   font-size: .8em;
   padding: 13px 10px 12px 10px;
+}
+
+.alert-box {
+  float: right;
 }
 
 .nift {
   font-family: gill sans, helvetica;
   font-style: oblique;
   font-weight: bold;
-  font-size: 4em;
-  color: #A8CD1B;
-}
+  font-size: 5em;
+  color: #FF7F12;
+  /*color: #A8CD1B;*/
+  text-shadow: 4px 3px 0px #262626, 9px 8px 0px #C40A5A;
+*/}
 
 .main_content {
   display: block;
@@ -28,8 +33,7 @@ body {
 }
 
 .line {
-  color: #A8CD1B;
-  /*color: #0066CC;*/
+  color: #C40A5A;
 }
 
 .main_image {
