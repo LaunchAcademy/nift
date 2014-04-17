@@ -11,5 +11,6 @@ class Review < ActiveRecord::Base
     class_name: 'User',
     foreign_key: :author_id
   belongs_to :product
+  has_many :votes
 
 end

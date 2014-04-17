@@ -15,6 +15,7 @@ describe Review do
   context 'associations' do
     it { should belong_to(:author) }
     it { should belong_to(:product) }
+    it { should have_many(:votes) }
   end
 
 end
