@@ -4,6 +4,7 @@ Nifty::Application.routes.draw do
     get 'search', on: :collection
     resources :reviews, only: [:index, :new, :create]
   end
+  resources :votes, only: :create
 
   devise_for :users
   root 'products#index'

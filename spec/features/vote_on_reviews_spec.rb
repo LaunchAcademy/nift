@@ -15,13 +15,11 @@ So I can influence their ranking
 
 
     scenario "can be upvoted" do
-      user    = FactoryGirl.create(:user)
-      sign_in_as(user)
-      product = FactoryGirl.create(:product)
-      review  = FactoryGirl.create(:review, product: product)
 
-      visit product_reviews_path(product)
-      expect(page).to have_content(review.comment)
+      sign_in_as(FactoryGirl.create(:user))
+      review  = FactoryGirl.create(:review)
+
+      visit product_reviews_path(review.product)
       within('div.review-vote') do
         expect(page).to have_content('0')
         expect(page).to_not have_content('1')

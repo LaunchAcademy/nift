@@ -5,6 +5,7 @@ class Review < ActiveRecord::Base
   validates :rating, presence: true, inclusion: {in: RATING_VALUES}
   validates :author_id, presence: true
   validates :product_id, presence: true
+  validates :vote_count, numericality: true
   validates_uniqueness_of :author_id, scope: :product_id
 
   belongs_to :author,
@@ -12,5 +13,6 @@ class Review < ActiveRecord::Base
     foreign_key: :author_id
   belongs_to :product
   has_many :votes
+
 
 end

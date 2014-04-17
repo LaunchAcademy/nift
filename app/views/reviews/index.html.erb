@@ -7,8 +7,24 @@
 
 <%= @reviews.each do |review| %>
 
-    <div><%= review.author.username %> </div>
-    <div><%= review.rating %> </div>
-    <div><%= review.comment %> </div>
+  <div class = "review">
+    <div class = "review-vote">
+      <div class = "upvote">
+      <i class = "fa fa-star"></i>
+        <%= link_to "Upvote", votes_path(review_id: review.id, value: 1), method: :post%>
+      </div>
+
+      <%= review.vote_count %>
+
+      <div class = "downvote">
+       <%= link_to "Downvote", votes_path(review_id: review.id, value: '-1'), method: :post%>
+      </div>
+  </div>
+
+  <div><%= review.author.username %> </div>
+  <div><%= review.rating %> </div>
+  <div><%= review.comment %> </div>
 
 <%- end -%>
+
+
