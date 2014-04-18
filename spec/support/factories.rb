@@ -26,4 +26,10 @@ FactoryGirl.define do
     product
     author
   end
+
+  factory :vote do
+    value '1'
+    user
+    review
+  end
 end

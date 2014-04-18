@@ -2,12 +2,12 @@ class ReviewsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
 
   def index
-    @product = Product.find(params[:product_id]).include([:reviews])
+    @product = Product.find(params[:product_id])
     @reviews  = @product.reviews
   end
 
   def new
-    @product = Product.find(params[:product_id]).include([:reviews])
+    @product = Product.find(params[:product_id])
     @review  = Review.new
   end
 
