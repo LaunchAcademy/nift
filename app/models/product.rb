@@ -9,7 +9,7 @@ class Product < ActiveRecord::Base
   has_many :categories, through: :categorizations
   accepts_nested_attributes_for :company
 
-  paginates_per 20
+  paginates_per 21
   mount_uploader :image, ImageUploader
 
   validate :valid_image?

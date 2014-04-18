@@ -12,11 +12,14 @@
   </head>
 
   <body>
-
     <%= render 'layouts/main_navbar' %>
     <%= render 'layouts/messages' %>
 
+    <h2 class='nift'>NIFT!</h2>
+    <p class='subheading'>Reviewing the latest startup products</p>
+
     <%= yield %>
+
     <%= javascript_include_tag "application" %>
 
   </body>

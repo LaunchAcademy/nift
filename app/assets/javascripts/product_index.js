@@ -1,3 +1,28 @@
+// $(document).ready(function() {
+//   var colors = [
+//     '#f00',
+//     '#0f0',
+//     '#00f',
+//     '#ff0',
+//     '#f0f'
+//   ];
+
+//   $('.filter').each(function() {
+//     var color = colors[Math.floor(Math.random()*colors.length)];
+//     $(this).css('background', 'linear-gradient('+color+')');
+//   });
+
+//   $('.product_image').hover(function() {
+//     $(this).toggleClass('filter');
+//   });
+
+  // display details when product title is clicked
+  $('.description').on('click', function(event) {
+    event.preventDefault();
+    $(this).toggleClass('show-description');
+  });
+// });
+
 // isotope stuff
 $(window).load(function() {
   var $container = $('#productContainer');
@@ -9,10 +34,6 @@ $(window).load(function() {
       columnWidth: 50
     },
   });
-
-  // display more text when product title is clicked
-  $('.description').on('click', function(event) {
-    event.preventDefault();
-    $(this).toggleClass('show-description');
-  });
 });
+
+// $container.isotope({sortBy: 'release_date'})

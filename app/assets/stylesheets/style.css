@@ -1,28 +1,34 @@
-body {
-  color: #ffffff;
-  background-color: #262626;
-  font-family: gill sans, helvetica;
-}
-
-.signed_in_as {
+/*.signed_in_as {
   color: #888;
   font-size: .8em;
   padding: 13px 10px 12px 10px;
-}
+}*/
 
 .alert-box {
   float: right;
 }
 
+.input_form {
+  width: 400px;
+  margin: 0 auto;
+}
+
 .nift {
+  text-align: center;
   font-family: gill sans, helvetica;
   font-style: oblique;
   font-weight: bold;
   font-size: 5em;
   color: #FF7F12;
   /*color: #A8CD1B;*/
-  text-shadow: 4px 3px 0px #262626, 9px 8px 0px #C40A5A;
+  text-shadow: 4px 3px 0px #292929, 9px 8px 0px #C40A5A;
+  margin-bottom: -10px;
 */}
+
+.subheading {
+  text-align: center;
+  /*margin-bottom: 7.5px;*/
+}
 
 .main_content {
   display: block;
@@ -36,10 +42,6 @@ body {
   color: #C40A5A;
 }
 
-.main_image {
-  /*prevent image from scaling or moving when resizing browser*/
-}
-
 * {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -47,7 +49,7 @@ body {
 }
 
 .productFilter {
-  margin: 16px auto;
+  margin: 16px 10%;
   padding-left: 16px;
   display: block;
 }
@@ -87,7 +89,9 @@ img {
     -moz-transition-property: height, width;
     transition-property: height, width;
     /*background: #DDD;*/
-    max-width: 1200px;
+    max-width: 800px;
+    max-height: 800px;
+    margin: 0 10%;
 }
 .isotope .isotope-item {
     -webkit-transition-property: -webkit-transform, opacity;
@@ -98,21 +102,21 @@ img {
 .product_image {
   /*position: relative;*/
   float: left;
-  max-width: 500px;
-  max-height: 500px;
+  max-width: 800px;
+  max-height: 800px;
   /*margin-bottom: 20px;*/
   background: #fff;
-  /*border: 2px solid #333;*/
-  /*border-color: rgba(0,0,0,1);*/
+  border: 3px solid #292929;
   overflow: hidden;
   /*transition: all .3s;
-  -webkit-transition: all .3s .1s ease;
-  -moz-transition: all .3s .1s ease;*/
+  -webkit-transition: all .3s .1s ease;/**/
+  /*-moz-transition: all .3s .1s ease;*/*/
 }
 
 .product_image:hover {
   z-index: 10;
   box-shadow: 0 0 30px #000;
+  border: 1px solid #fff;
   transform: scale(1.05);
   -webkit-transform: scale(1.05);
   -moz-transform: scale(1.05);
@@ -122,28 +126,21 @@ img {
   .size1 {
     width: 100px;
     z-index: 3;
-*/  }
+/*    -webkit-filter: grayscale(100%) hue-rotate(60deg);
+*/*/  }
   .size2 {
     width: 200px;
     z-index: 4;
-    box-shadow: 0 0 30px #000;
+/*    -webkit-filter: grayscale(100%) hue-rotate(90deg);
+*/    /*box-shadow: 0 0 30px #000;*/
 */  }
   .size3 {
-    width: 300px;
-    z-index: 5;
-    box-shadow: 0 0 40px #000;
-*/  }
-  .size4 {
-    width: 500px;
-    z-index: 6;
-    box-shadow: 0 0 50px #000;
+    width: 400px;
+    z-index: 4;
+/*    -webkit-filter: grayscale(100%) hue-rotate(90deg);
+*/    /*box-shadow: 0 0 30px #000;*/
 */  }
 }
-
-/*.product_image > * {
-  margin: 0;
-  padding: 0;
-}*/
 
 .isotope:after {
   content: '';
@@ -163,29 +160,48 @@ img {
   position: absolute;
   bottom: 0;
   margin: 0;
-  height: 30px;
+  /*height: 30px;*/
+  height: 15%;
   width: 100%;
   transition: height .5s;
   -webkit-transition: height .5s;
   -moz-transition: height .5s;
 }
 
-.product_details {
-  font-size: 10px;
+.size1 .product_title {
+  font-size: 0.75em;
+  line-height: .1em;
+}
+
+.size1 .product_details {
+  font-size: 0.5em;
+  opacity: 0;
+}
+
+.size2 .product_title {
+  font-size: 1em;
+}
+
+.size2 .product_details {
+  font-size: 0.75em;
+  opacity: 0;
+}
+
+.size3 .product_title {
+  font-size: 2em;
+}
+
+.size3 .product_details {
+  font-size: 1.2em;
   opacity: 0;
 }
 
 .show-description {
-  height: 100px;
+  height: 50%;
 }
 
 .show-description .product_details {
   opacity: 1;
-}
-
-.description {
-  font-size: 14px;
-  line-height: 20px;
 }
 
 .arrow {
@@ -194,6 +210,29 @@ img {
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
   border-bottom: 10px solid red;
-  margin-right: 10px;
+  margin-right: 3%;
   float: right;
 }
+
+.footer {
+  height: 40px;
+  display: block;
+}
+
+.pagination {
+  float: right;
+}
+
+/*.filter {
+   display: inline-block;
+   background: yellow;
+   position: relative;
+   img {
+     @include filter(
+       grayscale(100%)
+     );
+    opacity: 0.5;
+    z-index: 100;
+  }
+}
+*/
