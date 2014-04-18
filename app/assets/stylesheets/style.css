@@ -1,0 +1,238 @@
+/*.signed_in_as {
+  color: #888;
+  font-size: .8em;
+  padding: 13px 10px 12px 10px;
+}*/
+
+.alert-box {
+  float: right;
+}
+
+.input_form {
+  width: 400px;
+  margin: 0 auto;
+}
+
+.nift {
+  text-align: center;
+  font-family: gill sans, helvetica;
+  font-style: oblique;
+  font-weight: bold;
+  font-size: 5em;
+  color: #FF7F12;
+  /*color: #A8CD1B;*/
+  text-shadow: 4px 3px 0px #292929, 9px 8px 0px #C40A5A;
+  margin-bottom: -10px;
+*/}
+
+.subheading {
+  text-align: center;
+  /*margin-bottom: 7.5px;*/
+}
+
+.main_content {
+  display: block;
+}
+
+.text_box {
+  margin-top: 30px;
+}
+
+.line {
+  color: #C40A5A;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+.productFilter {
+  margin: 16px 10%;
+  padding-left: 16px;
+  display: block;
+}
+
+.productFilter a {
+    margin-right: 10px;
+    color:#888;
+    /*color: #0066CC;*/
+    /*color: rgb(210,10,10);*/
+    text-decoration:none;
+}
+
+.productFilter a.current {
+    font-weight:bold;
+}
+
+img {
+    margin: 0;
+}
+
+.isotope-item {
+    /*z-index: 2;*/
+}
+.isotope-hidden.isotope-item {
+    pointer-events: none;
+    z-index: 1;
+}
+.isotope,
+.isotope .isotope-item {
+    -webkit-transition-duration: 0.8s;
+    -moz-transition-duration: 0.8s;
+    transition-duration: 0.8s;
+
+}
+.isotope {
+    -webkit-transition-property: height, width;
+    -moz-transition-property: height, width;
+    transition-property: height, width;
+    /*background: #DDD;*/
+    max-width: 800px;
+    max-height: 800px;
+    margin: 0 10%;
+}
+.isotope .isotope-item {
+    -webkit-transition-property: -webkit-transform, opacity;
+    -moz-transition-property: -moz-transform, opacity;
+    transition-property: transform, opacity;
+}
+
+.product_image {
+  /*position: relative;*/
+  float: left;
+  max-width: 800px;
+  max-height: 800px;
+  /*margin-bottom: 20px;*/
+  background: #fff;
+  border: 3px solid #292929;
+  overflow: hidden;
+  /*transition: all .3s;
+  -webkit-transition: all .3s .1s ease;/**/
+  /*-moz-transition: all .3s .1s ease;*/*/
+}
+
+.product_image:hover {
+  z-index: 10;
+  box-shadow: 0 0 30px #000;
+  border: 1px solid #fff;
+  transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+}
+
+@media {
+  .size1 {
+    width: 100px;
+    z-index: 3;
+/*    -webkit-filter: grayscale(100%) hue-rotate(60deg);
+*/*/  }
+  .size2 {
+    width: 200px;
+    z-index: 4;
+/*    -webkit-filter: grayscale(100%) hue-rotate(90deg);
+*/    /*box-shadow: 0 0 30px #000;*/
+*/  }
+  .size3 {
+    width: 400px;
+    z-index: 4;
+/*    -webkit-filter: grayscale(100%) hue-rotate(90deg);
+*/    /*box-shadow: 0 0 30px #000;*/
+*/  }
+}
+
+.isotope:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.description {
+  color: rgba(255,255,255,1);
+  background: black;
+  background: linear-gradient(bottom, rgba(0,0,0,.8), rgba(0,0,0,.3));
+  background: -webkit-linear-gradient(bottom, rgba(0,0,0,.8), rgba(0,0,0,.3));
+  background: -moz-linear-gradient(bottom, rgba(0,0,0,.8), rgba(0,0,0,.3));
+  padding: 6px;
+  line-height: 28px;
+  text-align: justify;
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  /*height: 30px;*/
+  height: 15%;
+  width: 100%;
+  transition: height .5s;
+  -webkit-transition: height .5s;
+  -moz-transition: height .5s;
+}
+
+.size1 .product_title {
+  font-size: 0.75em;
+  line-height: .1em;
+}
+
+.size1 .product_details {
+  font-size: 0.5em;
+  opacity: 0;
+}
+
+.size2 .product_title {
+  font-size: 1em;
+}
+
+.size2 .product_details {
+  font-size: 0.75em;
+  opacity: 0;
+}
+
+.size3 .product_title {
+  font-size: 2em;
+}
+
+.size3 .product_details {
+  font-size: 1.2em;
+  opacity: 0;
+}
+
+.show-description {
+  height: 50%;
+}
+
+.show-description .product_details {
+  opacity: 1;
+}
+
+.arrow {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 10px solid red;
+  margin-right: 3%;
+  float: right;
+}
+
+.footer {
+  height: 40px;
+  display: block;
+}
+
+.pagination {
+  float: right;
+}
+
+/*.filter {
+   display: inline-block;
+   background: yellow;
+   position: relative;
+   img {
+     @include filter(
+       grayscale(100%)
+     );
+    opacity: 0.5;
+    z-index: 100;
+  }
+}
+*/

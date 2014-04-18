@@ -14,3 +14,8 @@
 /log/*.log
 /tmp
 
+# Ignore uploads directory
+/public/uploads
+
+# Ignore environment file containing credentials
+/.env

@@ -19,8 +19,8 @@ feature 'user creates an account', %q{
 
     visit root_path
     user = FactoryGirl.build(:user)
-    click_on 'Sign Up'
-    fill_out_form(user)
+    click_on 'Register'
+    fill_out_registration_form(user)
     click_on 'Sign up'
 
     expect(User.count).to eq(count + 1)
@@ -32,7 +32,7 @@ feature 'user creates an account', %q{
 
     fields.each do |omitted|
       visit new_user_registration_path
-      fill_out_form(user)
+      fill_out_registration_form(user)
       fill_in omitted, with: ''
       click_on 'Sign up'
 

@@ -10,6 +10,9 @@ gem 'jbuilder', '~> 1.2'
 gem 'simple_form'
 gem 'foundation-rails'
 gem 'devise'
+gem 'carrierwave'
+gem 'rmagick', require: false
+gem 'fog'
 gem 'kaminari'
 
 group :doc do
@@ -17,6 +20,7 @@ group :doc do
 end
 
 group :test, :development do
+  gem 'dotenv-rails'
   gem 'rspec-rails'
   gem 'factory_girl'
   gem 'pry-rails'

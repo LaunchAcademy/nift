@@ -1,5 +1,4 @@
 Nifty::Application.routes.draw do
-
   resources :products, only: [:index, :show, :new, :create] do
     get 'search', on: :collection
     resources :reviews, only: [:index, :new, :create]
