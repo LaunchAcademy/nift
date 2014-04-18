@@ -5,7 +5,7 @@ class VotesController < ApplicationController
     if @vote.save
       redirect_to product_reviews_path(@vote.review.product), notice: 'Your vote has been recorded.'
     else
-      redirect_to product_reviews_path(@vote.review.product), notice: 'My bad. You need to sign in to vote.'
+      redirect_to product_reviews_path(@vote.review.product), notice: 'My bad! You may have already voted. It not, please sign in.'
     end
   end
 
