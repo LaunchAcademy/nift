@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
 
   def index
-    @products = Product.page(params[:page])
+    @products = Product.page(params[:page]).order(params[:q][:sort])
   end
 
   def new

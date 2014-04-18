@@ -20,14 +20,17 @@
   font-weight: bold;
   font-size: 5em;
   color: #FF7F12;
-  /*color: #A8CD1B;*/
   text-shadow: 4px 3px 0px #292929, 9px 8px 0px #C40A5A;
   margin-bottom: -10px;
-*/}
+}
 
 .subheading {
   text-align: center;
-  /*margin-bottom: 7.5px;*/
+}
+
+.product_sort {
+  width: 200px;
+  margin: 0 0 20px 10%;
 }
 
 .main_content {
@@ -73,6 +76,7 @@ img {
 .isotope-item {
     /*z-index: 2;*/
 }
+
 .isotope-hidden.isotope-item {
     pointer-events: none;
     z-index: 1;
@@ -100,11 +104,9 @@ img {
 }
 
 .product_image {
-  /*position: relative;*/
   float: left;
   max-width: 800px;
   max-height: 800px;
-  /*margin-bottom: 20px;*/
   background: #fff;
   border: 3px solid #292929;
   overflow: hidden;
@@ -126,20 +128,15 @@ img {
   .size1 {
     width: 100px;
     z-index: 3;
-/*    -webkit-filter: grayscale(100%) hue-rotate(60deg);
-*/*/  }
+}
   .size2 {
     width: 200px;
     z-index: 4;
-/*    -webkit-filter: grayscale(100%) hue-rotate(90deg);
-*/    /*box-shadow: 0 0 30px #000;*/
-*/  }
+}
   .size3 {
     width: 400px;
     z-index: 4;
-/*    -webkit-filter: grayscale(100%) hue-rotate(90deg);
-*/    /*box-shadow: 0 0 30px #000;*/
-*/  }
+}
 }
 
 .isotope:after {
@@ -222,17 +219,3 @@ img {
 .pagination {
   float: right;
 }
-
-/*.filter {
-   display: inline-block;
-   background: yellow;
-   position: relative;
-   img {
-     @include filter(
-       grayscale(100%)
-     );
-    opacity: 0.5;
-    z-index: 100;
-  }
-}
-*/

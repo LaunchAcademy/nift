@@ -1,43 +1,37 @@
-<div class='row'>
+<!-- <div class='row'>
   <div class="productFilter">
     <a href="#" data-filter="*" class="current">All Categories</a>
     <a href="#" data-filter=".first">First</a>
+
     <a href="#" data-filter=".second">Second</a>
     <a href="#" data-filter=".third">Third</a>
     <a href="#" data-filter=".fourth">Fourth</a>
+  </div> -->
 
-    <div class='pagination'><%= paginate @products %></div>
-  </div>
-
-  <div class='isotope js-isotope small-centered' id='productContainer'>
-    <% count = 0 %>
-    <% @products.each do |product| %>
-      <% if count < 1 %>
-        <a id='<%= product.price %>' class='product_image size3 filter' href='<%= product_path(product)%>'>
-          <%= image_tag(product.image.large, class: 'image') unless product.image.nil? %>
-      <% else %>
-        <a id='<%= product.price %>' class='product_image size2 filter' href='<%= product_path(product)%>'>
-          <%= image_tag(product.image.large, class: 'image') unless product.image.nil? %>
-      <% end %>
-      <% count += 1 %>
-      <div class='description'>
-        <p class='product_title'>Sample title <%= product.name %><span class='arrow'></span></p>
-        <p class='product_details'>This is a sample description. It has more details about the product in the picture.</p>
-      </div>
-      </a>
-    <% end %>
-  </div>
+<div class='product_sort'>
+  <%= simple_form_for :q, url: products_path, method: :get do |f| %>
+    <%= f.input :sort, collection: [['Ranking', 'review'], ['Price', 'price'], ['Release Date', 'release_date'], ['Newest', 'created_at']] %>
+    <%= f.submit %>
+  <% end %>
 </div>
-<br>
 
-<!-- <div id='container'>
-  <%# @products.each do |product| %>
-    <p class="name" ><%#= product.name %></p>
-    <p class="price" ><%#= product.price %></p>
-    <p class="release_date" ><%#= product.release_date %></p>
-    <p class="created_at" ><%#= product.created_at %></p>
-    <p class="url" ><%#= product.url %></p>
+<div class='isotope js-isotope small-centered' id='productContainer'>
+  <% count = 0 %>
+  <% @products.each do |product| %>
+    <% if count < 1 %>
+      <a id='<%= product.price %>' class='product_image size3' href='<%= product_path(product)%>'>
+        <%= image_tag(product.image.large, class: 'image') unless product.image.nil? %>
+    <% else %>
+      <a id='<%= product.price %>' class='product_image size2' href='<%= product_path(product)%>'>
+        <%= image_tag(product.image.large, class: 'image') unless product.image.nil? %>
+    <% end %>
+    <% count += 1 %>
+    <div class='description'>
+      <p class='product_title'>Sample title <%= product.name %><span class='arrow'></span></p>
+      <p class='product_details'>This is a sample description. It has more details about the product in the picture.</p>
+    </div>
+    </a>
+  <% end %>
+</div>
 
-  <%# end %>
-</div> -->
-
+<div class='pagination'><%= paginate @products %></div>

@@ -1,5 +1,7 @@
 class Review < ActiveRecord::Base
 
+  after_create :update_product_ranking, :update_product_popularity
+
   RATING_VALUES = [1, 2, 3, 4, 5]
 
   validates :rating, presence: true, inclusion: {in: RATING_VALUES}
@@ -14,5 +16,13 @@ class Review < ActiveRecord::Base
   belongs_to :product
   has_many :votes
 
+  private
+
+  def update_product_ranking
+
+  end
+
+  def update_product_popularity
+  end
 
 end
