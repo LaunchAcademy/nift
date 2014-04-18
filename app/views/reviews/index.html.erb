@@ -1,0 +1,33 @@
+<ul>
+  <li><%=link_to 'New Review', new_product_review_path(@product) %></li>
+</ul>
+
+<h1>Product Name: <%=@product.name%></h1>
+<p>Produdct Description: <%=@product.description %></p>
+
+<% @reviews.each do |review| %>
+
+  <div class = "review row">
+
+    <div class = "review-vote small-1 columns">
+
+      <div class = "upvote">
+        <%= link_to "<i class='fa fa-sort-up'></i>".html_safe, votes_path(review_id: review.id, value: 1), method: :post, id: "up"%>
+      </div>
+
+      <%= review.vote_count %>
+
+      <div class = "downvote">
+       <%= link_to "<i class='fa fa-sort-down'></i>".html_safe, votes_path(review_id: review.id, value: '-1'), method: :post, id: "down"%>
+      </div>
+
+    </div>
+
+    <div class = "review-body small-11 columns">
+      <p><%= create_stars(review.rating) %><br>
+        <small>posted by <%= review.author.username %></small></p>
+      <p><%= review.comment %></p>
+    </div>
+  </div>
+
+<%- end -%>

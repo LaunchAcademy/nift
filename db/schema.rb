@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140408192340) do
+ActiveRecord::Schema.define(version: 20140417174719) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,6 +55,18 @@ ActiveRecord::Schema.define(version: 20140408192340) do
     t.string   "image"
   end
 
+  create_table "reviews", force: true do |t|
+    t.integer  "rating",                 null: false
+    t.text     "comment"
+    t.integer  "author_id",              null: false
+    t.integer  "product_id",             null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "vote_count", default: 0
+  end
+
+  add_index "reviews", ["author_id", "product_id"], name: "index_reviews_on_author_id_and_product_id", unique: true, using: :btree
+
   create_table "users", force: true do |t|
     t.string   "email",                  default: "",     null: false
     t.string   "encrypted_password",     default: "",     null: false
@@ -75,5 +87,15 @@ ActiveRecord::Schema.define(version: 20140408192340) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
+
+  create_table "votes", force: true do |t|
+    t.integer  "value",      null: false
+    t.integer  "user_id",    null: false
+    t.integer  "review_id",  null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "votes", ["user_id", "review_id"], name: "index_votes_on_user_id_and_review_id", unique: true, using: :btree
 
 end

@@ -8,6 +8,10 @@ class User < ActiveRecord::Base
   validates :role, presence: true, inclusion: {in: %w(admin user)}
 
   has_many :products
+  has_many :reviews,
+    class_name: 'Review',
+    foreign_key: :author_id
+  has_many :votes
 
   def admin?
     role == "admin"

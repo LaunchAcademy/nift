@@ -1,8 +1,8 @@
 
 FactoryGirl.define do
-  factory :user do
-    sequence(:username) {|n| "George Jetson#{n}"}
-    sequence(:email) {|n| "gj#{n}@gmail.com"}
+  factory :user, aliases: [:author] do
+    sequence(:username) { |n| "George Jetson#{n}" }
+    sequence(:email) { |n| "gj#{n}@gmail.com" }
     password '12345678'
   end
 
@@ -24,5 +24,17 @@ FactoryGirl.define do
   factory :image do
     title 'test image'
     file {fixture_file_upload('/spec/fixures/images/pie_eating_contest.jpg')}
+  end
+
+  factory :review do
+    rating '5'
+    product
+    author
+  end
+
+  factory :vote do
+    value '1'
+    user
+    review
   end
 end

@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Product do
-  describe 'validations' do
+  context 'validations' do
     let(:blank) {['', nil]}
     product = FactoryGirl.build(:product)
 
@@ -20,9 +20,10 @@ describe Product do
     end
   end
 
-  describe 'associations' do
+  context 'associations' do
     it {should belong_to(:user)}
     it {should belong_to(:company)}
     it {should have_many(:categories).through(:categorizations)}
+    it {should have_many(:reviews).dependent(:destroy)}
   end
 end
