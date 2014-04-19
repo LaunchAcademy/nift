@@ -6,7 +6,7 @@
     <p class='product_display_description'><%=@product.description %></p>
   </div>
 
-  <p class='review_link'><%=link_to 'REVIEW THIS PRODUCT', new_product_review_path(@product) %></p>
+  <p class='review_link'><%=link_to 'Review this product', new_product_review_path(@product) %></p>
 
   <% @product.reviews.each do |review| %>
     <div class = "review row">

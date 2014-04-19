@@ -1,27 +1,26 @@
-<div class='row'>
-  <div class="input_form">
-    <h2>Create a New Product</h2>
-    <div class="right">*Required Fields</div>
-    <br>
-    <%= simple_form_for @product, html: {multipart: true} do |f| %>
-      <%= f.input :name, label: "Product Name" %>
-      <%= f.input :description %>
-      <%= f.input :price %>
+<div class="input_form">
+  <h2>Create a New Product</h2>
+  <div class="right">*Required Fields</div>
+  <br>
+  <%= simple_form_for @product, html: {multipart: true} do |f| %>
+    <%= f.input :name, label: "Product Name" %>
+    <%= f.input :description %>
+    <%= f.input :price %>
 
-      <%= f.simple_fields_for :company do |c| %>
-        <%= c.input :name, label: "Company Name" %>
-        <%= c.input :location %>
-        <%= c.input :url, label: "Company Website" %>
-      <% end %>
-
-      <%= f.input :url, label: "Product Website" %>
-
-      <p>Please include an image of the product:</p>
-      <%= f.error :image %>
-      <%= f.file_field :image %>
-      <%= f.text_field :remote_image_url, placeholder: '...or enter image URL' %>
-
-      <%= f.button :submit, "Submit" %>
+    <%= f.simple_fields_for :company do |c| %>
+      <%= c.input :name, label: "Company Name" %>
+      <%= c.input :location %>
+      <%= c.input :url, label: "Company Website" %>
     <% end %>
-  </div>
+
+    <%= f.input :url, label: "Product Website" %>
+
+    <p>Please include an image of the product:</p>
+    <%= f.error :image %>
+    <%= f.file_field :image %>
+    <%= f.text_field :remote_image_url, placeholder: '...or enter image URL' %>
+
+    <%= f.button :submit, "Submit" %>
+  <% end %>
 </div>
+

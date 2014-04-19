@@ -40,7 +40,7 @@
 // $total-columns: 12;
 
 // We use these to control various global styles
-$body-bg: #292929;
+$body-bg: #292933;
 $body-font-color: #fff;
 $body-font-family: "Open Sans", "Gill Sans", "Helvetica", Helvetica, Arial, sans-serif;
 // $body-font-weight: normal;
@@ -487,12 +487,12 @@ $header-font-color: #FF7F12;
 // $form-label-font-size: rem-calc(14);
 // $form-label-font-weight: normal;
 // $form-label-line-height: 1.5;
-$form-label-font-color: scale-color(#888, $lightness: 30%);
+$form-label-font-color: scale-color(#778, $lightness: 30%);
 // $form-label-bottom-margin: 0;
 // $input-font-family: inherit;
 // $input-font-color: rgba(0,0,0,0.75);
 $input-font-size: rem-calc(16);
-$input-bg-color: #777;
+$input-bg-color: #667;
 $input-focus-bg-color: scale-color(#fff, $lightness: -5%);
 // $input-border-color: scale-color(#fff, $lightness: -20%);
 // $input-focus-border-color: scale-color(#fff, $lightness: -40%);
@@ -587,7 +587,7 @@ $input-include-glowing-effect: false;
 // $joyride-tip-timer-color: #666;
 
 // This changes up the styles for the close button
-// $joyride-tip-close-color: #777;
+// $joyride-tip-close-color: #666;
 // $joyride-tip-close-size: 24px;
 // $joyride-tip-close-weight: normal;
 
@@ -1134,7 +1134,7 @@ $input-include-glowing-effect: false;
 
 // Background color for the top bar
 // $topbar-bg: $topbar-bg-color;
-$topbar-bg: #484848;
+$topbar-bg: #474752;
 
 // Height and margin
 // $topbar-height: 45px;
@@ -1146,9 +1146,9 @@ $topbar-title-font-style: oblique;
 // $topbar-title-font-size: rem-calc(17);
 
 // Style the top bar dropdown elements
-// $topbar-dropdown-bg: #333;
+$topbar-dropdown-bg: #334;
 // $topbar-dropdown-link-color: #fff;
-// $topbar-dropdown-link-bg: #333;
+$topbar-dropdown-link-bg: #334;
 // $topbar-dropdown-link-weight: normal;
 // $topbar-dropdown-toggle-size: 5px;
 // $topbar-dropdown-toggle-color: #fff;
@@ -1162,7 +1162,7 @@ $topbar-link-color-active: #FFF;
 // $topbar-link-weight: normal;
 // $topbar-link-font-size: rem-calc(13);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
-$topbar-link-bg-hover: #888;
+$topbar-link-bg-hover: #667;
 // $topbar-link-bg-active: $primary-color;
 // $topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);
 // $topbar-link-font-family: $body-font-family;
@@ -1172,11 +1172,11 @@ $topbar-link-bg-hover: #888;
 // $topbar-button-font-size: 0.75rem;
 // $topbar-button-top: 7px;
 
-// $topbar-dropdown-label-color: #777;
+$topbar-dropdown-label-color: #778;
 // $topbar-dropdown-label-text-transform: uppercase;
 // $topbar-dropdown-label-font-weight: bold;
 // $topbar-dropdown-label-font-size: rem-calc(10);
-// $topbar-dropdown-label-bg: #333;
+$topbar-dropdown-label-bg: #334;
 
 // Top menu icon styles
 // $topbar-menu-link-transform: uppercase;
@@ -1184,8 +1184,8 @@ $topbar-link-bg-hover: #888;
 // $topbar-menu-link-weight: bold;
 // $topbar-menu-link-color: #fff;
 // $topbar-menu-icon-color: #fff;
-// $topbar-menu-link-color-toggled: #888;
-// $topbar-menu-icon-color-toggled: #888;
+$topbar-menu-link-color-toggled: #778;
+$topbar-menu-icon-color-toggled: #778;
 
 // Transitions and breakpoint styles
 // $topbar-transition-speed: 300ms;
