@@ -9,12 +9,12 @@
 }
 
 .nift {
-  font-family: gill sans, helvetica;
-  font-style: oblique;
+  font-family: 'Arvo', 'Gill sans', Helvetica, sans-serif;
   font-weight: bold;
-  font-size: 6.5em;
+  font-size: 5em;
+  letter-spacing: 0.05em;
   color: #FF7F12;
-  text-shadow: 4px 3px 0px #292929, 9px 8px 0px #C40A5A;
+  text-shadow: 4px 3px 0px #292929, 9px 8px 0px #940C47;
   margin: 20px 0 -10px 100px;
   /*position: relative;*/
 }
@@ -36,6 +36,7 @@
 }
 
 .product_sort_links {
+  font-family: 'Open Sans', Helvetica, sans-serif;
   /*margin-left: 100px;*/
   padding-bottom: 20px;
   /*width: 500px;*/
@@ -176,6 +177,7 @@ img {
 }
 
 .size1 .product_title {
+  font-family: 'Arvo', Helvetica, sans-serif;
   font-size: 1.2em;
 }
 
@@ -185,11 +187,12 @@ img {
 }
 
 .size2 .product_title {
+  font-family: 'Arvo', Helvetica, sans-serif;
   font-size: 2.5em;
 }
 
 .size2 .product_details {
-  font-size: 1.5em;
+  font-size: 1.25em;
   opacity: 0;
 }
 
@@ -225,6 +228,7 @@ img {
 }
 
 .product_display_description {
+  font-family: 'Open Sans', Helvetica, sans-serif;
   font-size: 1.3em;
   float: left;
   clear: right;

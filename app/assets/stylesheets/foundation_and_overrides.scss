@@ -42,7 +42,7 @@
 // We use these to control various global styles
 $body-bg: #292929;
 $body-font-color: #fff;
-$body-font-family: "Gill Sans", "Helvetica", Helvetica, Arial, sans-serif;
+$body-font-family: "Open Sans", "Gill Sans", "Helvetica", Helvetica, Arial, sans-serif;
 // $body-font-weight: normal;
 // $body-font-style: normal;
 
@@ -55,8 +55,8 @@ $body-font-family: "Gill Sans", "Helvetica", Helvetica, Arial, sans-serif;
 // $default-float: left;
 
 // We use these as default colors throughout
-$primary-color: #FF7F12;
-$secondary-color: #C40A5A;
+$primary-color: #D65A0C;
+$secondary-color: #940C47;
 // $alert-color: #f04124;
 // $success-color: #005A31;
 $success-color: #01939A;
@@ -119,7 +119,7 @@ $global-radius: 0;
 // $include-html-type-classes: $include-html-classes;
 
 // We use these to control header font styles
-// $header-font-family: $body-font-family;
+$header-font-family: "Arvo", "Gill Sans", "Helvetica", Helvetica, sans-serif;
 // $header-font-weight: normal;
 // $header-font-style: normal;
 // $header-font-color: #222;
