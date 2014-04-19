@@ -5,10 +5,12 @@
 }*/
 
 .top-bar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 100;
+  /*position: fixed;*/
+  /*top: 0;*/
+  /*z-index: 100;*/
+  /*width: 100%;*/
+  /*left: 0;*/
+  padding-left: 100px;
 }
 
 .alert-box {
@@ -24,27 +26,32 @@
   font-family: gill sans, helvetica;
   font-style: oblique;
   font-weight: bold;
-  font-size: 6em;
+  font-size: 6.5em;
   color: #FF7F12;
   text-shadow: 4px 3px 0px #292929, 9px 8px 0px #C40A5A;
-  margin: 50px 0 -10px 10%;
-  position: relative;
+  margin: 20px 0 -10px 100px;
+  /*position: relative;*/
 }
 
 .subheading {
-  margin-left: 10%;
+  margin-left: 100px;
+  font-size: 1.2em;
 }
 
 .product_sort {
   width: 200px;
-  margin: 0 0 20px 10%;
+  margin: 0 0 20px 100px;
   display: none;
 }
 
+.main_content {
+
+}
+
 .product_sort_links {
-  margin: 16px 10%;
-  /*padding-left: 16px;*/
-  display: block;
+  margin-left: 100px;
+  padding-bottom: 20px;
+  /*width: 500px;*/
 }
 
 .product_sort_links a {
@@ -103,7 +110,7 @@ img {
     /*background: #DDD;*/
     max-width: 1000px;
     max-height: 1000px;
-    margin: 0 10%;
+    margin: 0 100px;
 }
 .isotope .isotope-item {
     -webkit-transition-property: -webkit-transform, opacity;
