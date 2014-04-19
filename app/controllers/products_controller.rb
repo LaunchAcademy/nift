@@ -2,7 +2,11 @@ class ProductsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
 
   def index
-    @products = Product.page(params[:page]).order(params[:q][:sort])
+    if params[:q]
+      @products = Product.page(params[:page]).order(params[:q][:sort])
+    else
+      @products = Product.page(params[:page]).order(:average_rating)
+    end
   end
 
   def new
@@ -40,6 +44,9 @@ class ProductsController < ApplicationController
       :price,
       :url,
       :image,
+      # :average_rating,
+      # :review_count,
+      # :review,
       company_attributes: [:name, :location, :url]
     )
   end

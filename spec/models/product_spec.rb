@@ -15,8 +15,10 @@ describe Product do
     it {should_not have_valid(:price).when(*blank)}
     it {should_not have_valid(:price).when('ten')}
 
-    it {should have_valid(:rank).when(3)}
-    it {should have_valid(:popularity).when(3)}
+    it {should have_valid(:average_rating).when(3)}
+    it {should have_valid(:reviews_count).when(3)}
+
+    it {should validate_presence_of(:image)}
 
     it 'is valid when given valid attributes' do
       expect(product).to be_valid

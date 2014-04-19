@@ -2,6 +2,7 @@ class Product < ActiveRecord::Base
   validates :name, presence: true
   validates :description, presence: true
   validates :price, presence: true, numericality: {minimum: 0}
+  validates :image, presence: true
 
   belongs_to :user
   belongs_to :company
@@ -23,5 +24,11 @@ class Product < ActiveRecord::Base
 
   def self.search(query)
     where('LOWER(name) like LOWER(?) or LOWER(description) like LOWER(?)', query, query)
+  end
+
+  def update_average_rating
+    total = reviews.inject(0) {|sum, review| sum + review.rating}
+    count = reviews.size
+    update_attributes(average_rating: total.to_f / count.to_f)
   end
 end

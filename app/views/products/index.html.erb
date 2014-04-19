@@ -1,16 +1,15 @@
-<!-- <div class='row'>
-  <div class="productFilter">
-    <a href="#" data-filter="*" class="current">All Categories</a>
-    <a href="#" data-filter=".first">First</a>
-
-    <a href="#" data-filter=".second">Second</a>
-    <a href="#" data-filter=".third">Third</a>
-    <a href="#" data-filter=".fourth">Fourth</a>
-  </div> -->
+<div class='row'>
+  <div class="product_sort_links">
+    <a href="#" class="sort_link">Highest rated</a>
+    <a href="#" class="sort_link">Popularity</a>
+    <a href="#" class="sort_link">Newest</a>
+    <a href="#" class="sort_link">Release date</a>
+  </div>
+</div>
 
 <div class='product_sort'>
   <%= simple_form_for :q, url: products_path, method: :get do |f| %>
-    <%= f.input :sort, collection: [['Ranking', 'review'], ['Price', 'price'], ['Release Date', 'release_date'], ['Newest', 'created_at']] %>
+    <%= f.input :sort, collection: [['Highest rated', 'average_rating'], ['Popularity', 'reviews_count'], ['Release Date', 'release_date'], ['Newest', 'created_at']] %>
     <%= f.submit %>
   <% end %>
 </div>
@@ -20,10 +19,10 @@
   <% @products.each do |product| %>
     <% if count < 1 %>
       <a id='<%= product.price %>' class='product_image size3' href='<%= product_path(product)%>'>
-        <%= image_tag(product.image.large, class: 'image') unless product.image.nil? %>
+        <span class="overlay tint"><%= image_tag(product.image.large, class: 'image') unless product.image.nil? %></span>
     <% else %>
       <a id='<%= product.price %>' class='product_image size2' href='<%= product_path(product)%>'>
-        <%= image_tag(product.image.large, class: 'image') unless product.image.nil? %>
+        <span class="overlay tint"><%= image_tag(product.image.large, class: 'image') unless product.image.nil? %></span>
     <% end %>
     <% count += 1 %>
     <div class='description'>

@@ -1156,13 +1156,13 @@ $topbar-title-font-style: oblique;
 
 // Set the link colors and styles for top-level nav
 // $topbar-link-color: #A8CD1B;
-// $topbar-link-color-hover: #F3FAB6;
-// $topbar-link-color-active: #F3FAB6;
+$topbar-link-color-hover: #FFF;
+$topbar-link-color-active: #FFF;
 // $topbar-link-color-active-hover: #F3FAB6;
 // $topbar-link-weight: normal;
 // $topbar-link-font-size: rem-calc(13);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
-// $topbar-link-bg-hover: #006A31;
+$topbar-link-bg-hover: #888;
 // $topbar-link-bg-active: $primary-color;
 // $topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);
 // $topbar-link-font-family: $body-font-family;

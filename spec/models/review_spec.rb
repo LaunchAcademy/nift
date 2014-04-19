@@ -12,19 +12,17 @@ describe Review do
   end
 
   context 'associations' do
-
     it { should belong_to(:author) }
     it { should belong_to(:product) }
     it { should have_many(:votes) }
 
     let(:product) {FactoryGirl.create(:product)}
-    let(:review) {FactoryGirl.create(:review)}
 
-    it 'updates product popularity when a review is created' do
-      prior_count = product.reviews.size
+    it 'updates product review count when a review is created' do
+      prior_count = product.reviews_count
       FactoryGirl.create(:review)
 
-      expect(product.reviews.size).to eq(prior_count + 1)
+      expect(product.reviews_count).to eq(prior_count + 1)
     end
 
     describe '#update_product_average_rating' do
