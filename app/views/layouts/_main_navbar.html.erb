@@ -1,9 +1,9 @@
 <div class="contain-to-grid">
   <nav class="top-bar">
     <ul class="title-area">
-      <li class="name">
-        <!-- <h1><a href="/">NIFT</a></h1> -->
-      </li>
+      <!-- <li class="name">
+        <h1><a href="/">NIFT</a></h1>
+      </li> -->
       <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
     </ul>
 
@@ -24,10 +24,10 @@
         <li class="has-form">
           <div class="row collapse">
             <%= form_tag('/products/search', method: :get) do %>
-              <div class="large-8 small-9 columns">
+              <div class="large-7 small-8 columns">
                 <%= text_field_tag :query%>
               </div>
-              <div class="large-4 small-3 columns">
+              <div class="large-5 small-4 columns">
                 <%= submit_tag 'Search', class: "button expand" %>
               </div>
             <% end %>

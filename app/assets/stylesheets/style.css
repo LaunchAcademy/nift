@@ -1,32 +1,18 @@
-/*.signed_in_as {
-  color: #888;
-  font-size: .8em;
-  padding: 13px 10px 12px 10px;
-}*/
-
-.top-bar {
-  /*position: fixed;*/
-  /*top: 0;*/
-  /*z-index: 100;*/
-  /*width: 100%;*/
-  /*left: 0;*/
-  padding-left: 100px;
-}
-
 .alert-box {
   float: right;
 }
 
 .input_form {
   width: 400px;
-  margin: 0 auto;
+  margin: 0 40px;
+  padding-top: 40px;
 }
 
 .nift {
   font-family: gill sans, helvetica;
   font-style: oblique;
   font-weight: bold;
-  font-size: 6em;
+  font-size: 6.5em;
   color: #FF7F12;
   text-shadow: 4px 3px 0px #292929, 9px 8px 0px #C40A5A;
   margin: 20px 0 -10px 100px;
@@ -35,20 +21,22 @@
 
 .subheading {
   margin-left: 100px;
+  font-size: 1.2em;
 }
 
 .product_sort {
   width: 200px;
-  margin: 0 0 20px 100px;
+  margin-bottom: 20px;
   display: none;
 }
 
 .main_content {
-
+  margin-left: 100px;
+  margin-right: 100px;
 }
 
 .product_sort_links {
-  margin-left: 100px;
+  /*margin-left: 100px;*/
   padding-bottom: 20px;
   /*width: 500px;*/
 }
@@ -84,37 +72,35 @@
 }
 
 img {
-    margin: 0;
+  margin: 0;
 }
 
 .isotope-item {
-    /*z-index: 2;*/
+  /*z-index: 2;*/
 }
 
 .isotope-hidden.isotope-item {
-    pointer-events: none;
-    z-index: 1;
+  pointer-events: none;
+  z-index: 1;
 }
 .isotope,
 .isotope .isotope-item {
-    -webkit-transition-duration: 0.8s;
-    -moz-transition-duration: 0.8s;
-    transition-duration: 0.8s;
+  -webkit-transition-duration: 0.8s;
+  -moz-transition-duration: 0.8s;
+  transition-duration: 0.8s;
 
 }
 .isotope {
-    -webkit-transition-property: height, width;
-    -moz-transition-property: height, width;
-    transition-property: height, width;
-    /*background: #DDD;*/
-    max-width: 1000px;
-    max-height: 1000px;
-    margin: 0 100px;
+  -webkit-transition-property: height, width;
+  -moz-transition-property: height, width;
+  transition-property: height, width;
+  max-width: 1000px;
+  max-height: 1000px;
 }
 .isotope .isotope-item {
-    -webkit-transition-property: -webkit-transform, opacity;
-    -moz-transition-property: -moz-transform, opacity;
-    transition-property: transform, opacity;
+  -webkit-transition-property: -webkit-transform, opacity;
+  -moz-transition-property: -moz-transform, opacity;
+  transition-property: transform, opacity;
 }
 
 .tint {
@@ -139,8 +125,8 @@ img {
   border: 4px solid #292929;
   overflow: hidden;
   /*transition: all .3s;
-  -webkit-transition: all .3s .1s ease;/**/
-  /*-moz-transition: all .3s .1s ease;*/*/
+  -webkit-transition: all .3s .1s ease;
+  -moz-transition: all .3s .1s ease;*/
 }
 
 .product_image:hover {
@@ -154,14 +140,10 @@ img {
 
 @media {
   .size1 {
-    width: 100px;
-    z-index: 3;
-  }
-  .size2 {
     width: 200px;
     z-index: 4;
   }
-  .size3 {
+  .size2 {
     width: 400px;
     z-index: 4;
   }
@@ -185,8 +167,8 @@ img {
   position: absolute;
   bottom: 0;
   margin: 0;
-  /*height: 30px;*/
-  height: 15%;
+  padding: 0 5%;
+  height: 20%;
   width: 100%;
   transition: height .5s;
   -webkit-transition: height .5s;
@@ -194,35 +176,25 @@ img {
 }
 
 .size1 .product_title {
-  font-size: 0.75em;
-  line-height: .1em;
+  font-size: 1.2em;
 }
 
 .size1 .product_details {
-  font-size: 0.5em;
+  font-size: 0.85em;
   opacity: 0;
 }
 
 .size2 .product_title {
-  font-size: 1em;
+  font-size: 2.5em;
 }
 
 .size2 .product_details {
-  font-size: 0.75em;
-  opacity: 0;
-}
-
-.size3 .product_title {
-  font-size: 2em;
-}
-
-.size3 .product_details {
-  font-size: 1.2em;
+  font-size: 1.5em;
   opacity: 0;
 }
 
 .show-description {
-  height: 50%;
+  height: 60%;
 }
 
 .show-description .product_details {
@@ -232,10 +204,10 @@ img {
 .arrow {
   width: 0;
   height: 0;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-bottom: 10px solid red;
-  margin-right: 3%;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 12px solid red;
+  margin: 12.5% 3% 0 0;
   float: right;
 }
 
@@ -245,4 +217,20 @@ img {
   /*padding: 20px 0;*/
   margin: 0 10%;
   bottom: 0;
+}
+
+.product_display_image {
+  float: left;
+  clear: right;
+}
+
+.product_display_description {
+  font-size: 1.3em;
+  float: left;
+  clear: right;
+  margin-left: 30px;
+}
+
+.review_link {
+  font-size: 1.6em;
 }

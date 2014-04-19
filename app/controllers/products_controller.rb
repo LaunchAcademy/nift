@@ -2,11 +2,15 @@ class ProductsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
 
   def index
-    if params[:q]
-      @products = Product.page(params[:page]).order(params[:q][:sort])
+    if params[:sort_query]
+      @products = Product.page(params[:page]).order(params[:sort_query][:sort])
     else
       @products = Product.page(params[:page]).order(:average_rating)
     end
+  end
+
+  def show
+    @product = Product.find(params[:id])
   end
 
   def new
@@ -37,6 +41,10 @@ class ProductsController < ApplicationController
     params.require(:query)
   end
 
+  def sort_query_params
+    params.require(:sort_query).permit(:sort)
+  end
+
   def product_params
     params.require(:product).permit(
       :name,
@@ -44,9 +52,6 @@ class ProductsController < ApplicationController
       :price,
       :url,
       :image,
-      # :average_rating,
-      # :review_count,
-      # :review,
       company_attributes: [:name, :location, :url]
     )
   end

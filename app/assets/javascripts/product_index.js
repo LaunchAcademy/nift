@@ -1,6 +1,8 @@
 $(document).ready(function() {
+  $('.arrow').hide();
+
   // apply random color tint to image overlays
-  var colors = ['#f00','#0f0','#00f','#ff0','#f0f','#0ff'];
+  var colors = ['#733','#373','#337','#773','#737','#377'];
   $('.overlay').each(function(){
     var color = colors[Math.floor(Math.random() * colors.length)];
     $(this).css('background-color',color);
@@ -10,18 +12,20 @@ $(document).ready(function() {
   $('.sort_link').on('click', function() {
     var link = $(this).text();
     $("select[name='q[sort]'").find('option:contains('+link+')').attr('selected', true);
-    $('.q').submit();
+    $('.sort_query').submit();
   });
 
   // display details when product title is clicked
   $('.description').on('click', function(event) {
     event.preventDefault();
     $(this).toggleClass('show-description');
+    $(this).find('.arrow').fadeToggle(100);
   });
 
-  // remove tint when hovering on an image
+  // remove tint and show arrow when hovering on an image
   $('.product_image').hover(function() {
     $(this).find('.overlay').toggleClass('tint');
+    $(this).find('.arrow').fadeToggle(200);
   });
 });
 
@@ -33,7 +37,7 @@ $(window).load(function() {
     itemSelector: '.product_image',
     layoutMode: 'masonry',
     masonry: {
-      columnWidth: 50
+      columnWidth: 50,
     },
   });
 });

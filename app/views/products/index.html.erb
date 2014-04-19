@@ -1,5 +1,5 @@
 <div class='product_sort'>
-    <%= simple_form_for :q, url: products_path, method: :get do |f| %>
+    <%= simple_form_for :sort_query, url: products_path, method: :get do |f| %>
       <%= f.input :sort, collection: [['Highest rated', 'average_rating'], ['Popularity', 'reviews_count'], ['Release Date', 'release_date'], ['Newest', 'created_at']] %>
       <%= f.submit %>
     <% end %>
@@ -18,13 +18,13 @@
   </div>
 
   <div class='isotope js-isotope small-centered' id='productContainer'>
-    <% count = 0 %>
+    <% count = 1 %>
     <% @products.each do |product| %>
-      <% if count < 1 %>
-        <a id='<%= product.price %>' class='product_image size3' href='<%= product_path(product)%>'>
+      <% if [1,6,13].include?count %>
+        <a id='<%= product.price %>' class='product_image size2' href='<%= product_path(product)%>'>
           <span class="overlay tint"><%= image_tag(product.image.large, class: 'image') unless product.image.nil? %></span>
       <% else %>
-        <a id='<%= product.price %>' class='product_image size2' href='<%= product_path(product)%>'>
+        <a id='<%= product.price %>' class='product_image size1' href='<%= product_path(product)%>'>
           <span class="overlay tint"><%= image_tag(product.image.large, class: 'image') unless product.image.nil? %></span>
       <% end %>
       <% count += 1 %>
