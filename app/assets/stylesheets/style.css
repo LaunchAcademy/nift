@@ -13,7 +13,7 @@
   font-family: 'Arvo', 'Gill sans', Helvetica, sans-serif;
   letter-spacing: 0.3em;
   margin: 50px 0 0 100px;
-  /*text-shadow: 4px 3px 0px #292933, 9px 8px 0px #940C47;*/
+  /*text-shadow: 2px 2px 1 rgba(0,0,0,.5);*/
 }
 
 .logo_letter {
@@ -21,8 +21,15 @@
   text-align: center;
   margin: 0 3px 10px 0;
   padding: 0 8px 0 10px;
-  color: #FF7F12;
-  background-color: #87133E;
+
+  /*color: #FF7F12;
+  background-color: #87133E;*/
+
+  /*color: #ADDE6C;*/
+  /*background-color: #36706F;*/
+
+  color: #222636;
+  background-color: #7FBD5E;
 }
 
 .subheading {
@@ -98,8 +105,8 @@ img {
   -webkit-transition-property: height, width;
   -moz-transition-property: height, width;
   transition-property: height, width;
-  max-width: 1000px;
-  max-height: 1000px;
+  max-width: 800px;
+  max-height: 800px;
 }
 .isotope .isotope-item {
   -webkit-transition-property: -webkit-transform, opacity;
@@ -200,7 +207,7 @@ img {
 }
 
 .show-description {
-  height: 60%;
+  height: 70%;
 }
 
 .show-description .product_details {
@@ -213,7 +220,7 @@ img {
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
   border-bottom: 12px solid red;
-  margin: 12.5% 3% 0 0;
+  margin: 10% 3% 0 0;
   float: right;
 }
 
@@ -225,9 +232,14 @@ img {
   bottom: 0;
 }
 
+.product_display {
+  /*float: left;
+  clear: right;*/
+}
+
 .product_display_image {
+  margin: 0 20px 40px 0;
   float: left;
-  clear: right;
 }
 
 .product_display_description {
@@ -235,13 +247,32 @@ img {
   font-size: 1.3em;
   float: left;
   clear: right;
-  margin-left: 30px;
+  /*margin-left: 30px;*/
+}
+
+.stars {
+  color: #F2EA79;
 }
 
 .review_link {
-  font-size: 1.6em;
+  font-size: 1.2em;
+  font-family: 'Arvo', Helvetica, sans-serif;
 }
 
-.review {
+.review-text {
   text-align: justify;
+  width: 550px;
+  float: left;
+}
+
+.review-vote {
+  float: left;
+}
+
+@media (max-width: 600px) {
+  .input_form {margin-left: 50px; margin-right: 50px;}
+  .nift {margin-left: 50px; margin-right: 50px;}
+  .subheading {margin-left: 50px; margin-right: 50px;}
+  .main_content {margin-left: 50px; margin-right: 50px;}
+  .review {width: 375px;}
 }

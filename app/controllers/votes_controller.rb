@@ -1,6 +1,5 @@
 class VotesController < ApplicationController
   def create
-    binding.pry
     @vote = Vote.new(value: params[:value], user: current_user, review_id: params[:review_id])
     if @vote.save
       redirect_to product_path(@vote.review.product), notice: 'Your vote has been recorded.'
