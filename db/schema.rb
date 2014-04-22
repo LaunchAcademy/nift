@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 20140422200306) do
     t.integer  "company_id"
     t.decimal  "price"
     t.string   "release_date"
-    t.integer  "category_id"
+    t.string   "tags"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image",                      null: false
