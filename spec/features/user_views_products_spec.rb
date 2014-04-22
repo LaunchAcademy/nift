@@ -29,21 +29,23 @@ feature 'user views products', %q{
     expect(page).to have_content('Sign In')
   end
 
-  scenario 'user sees 20 products displayed on the index page' do
-    FactoryGirl.create_list(:product, 30)
+  scenario 'user sees 15 products displayed on the index page' do
+    FactoryGirl.create_list(:product, 20)
     visit root_path
 
-    expect(page).to have_css('div.product_image', count: 20)
+    expect(page).to have_css('img', count: 15)
 
     click_on '2'
-    expect(page).to have_css('div.product_image', count: 10)
+    expect(page).to have_css('img', count: 5)
   end
 
   scenario 'user changes sort criteria' do
-    FactoryGirl.create_list(:product, 30)
+    FactoryGirl.create_list(:product, 20)
     visit root_path
     click_on 'Newest'
 
-    expect(css: ".isotope:first-child").to have_css("products/#{Product.first.id}")
+    within(:css, "div.isotope:first-child") do
+      expect(page).to have_css("a#image-#{1}-product#{Product.last.id}")
+    end
   end
 end
