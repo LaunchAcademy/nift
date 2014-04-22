@@ -15,6 +15,10 @@ class Review < ActiveRecord::Base
   belongs_to :product, counter_cache: true
   has_many :votes
 
+  def vote_count
+    votes.sum(:value)
+  end
+
   private
 
   def update_product_average_rating

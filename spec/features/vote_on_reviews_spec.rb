@@ -17,7 +17,7 @@ So I can influence their ranking
 
     scenario "can be upvoted" do
       sign_in_as(user)
-      visit product_reviews_path(review.product)
+      visit product_path(review.product)
       within('div.review-vote') do
         expect(page).to have_content('0')
         expect(page).to_not have_content('1')
@@ -33,7 +33,7 @@ So I can influence their ranking
 
     scenario "can be downvoted" do
       sign_in_as(user)
-      visit product_reviews_path(review.product)
+      visit product_path(review.product)
       within('div.review-vote') do
         expect(page).to have_content('0')
         expect(page).to_not have_content('-1')
@@ -47,9 +47,9 @@ So I can influence their ranking
       end
     end
 
-    scenario "a signed-in user can only vote once per review" do
+    scenario "a signed-in user cannot upvote twice" do
       sign_in_as(user)
-      visit product_reviews_path(review.product)
+      visit product_path(review.product)
       within('div.review-vote') do
         expect(page).to have_content('0')
         click_link 'up'
@@ -58,19 +58,34 @@ So I can influence their ranking
         expect(page).to have_content('1')
         click_link 'up'
       end
-      expect(page).to have_content('My bad! You may have already voted. It not, please sign in.')
       within('div.review-vote') do
         expect(page).to have_content('1')
       end
     end
 
-    scenario "a signed-out user cannot vote on reviews" do
-      visit product_reviews_path(review.product)
+    scenario "a signed-in user can change their vote" do
+      sign_in_as(user)
+      visit product_path(review.product)
       within('div.review-vote') do
         expect(page).to have_content('0')
         click_link 'up'
       end
-      expect(page).to have_content('My bad! You may have already voted. It not, please sign in.')
+      within('div.review-vote') do
+        expect(page).to have_content('1')
+        click_link 'down'
+      end
+      within('div.review-vote') do
+        expect(page).to have_content('-1')
+      end
+    end
+
+    scenario "a signed-out user cannot vote on reviews" do
+      visit product_path(review.product)
+      within('div.review-vote') do
+        expect(page).to have_content('0')
+        click_link 'up'
+      end
+      expect(page).to have_content("Please sign in to vote!")
       within('div.review-vote') do
         expect(page).to have_content('0')
       end
