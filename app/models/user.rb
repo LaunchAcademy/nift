@@ -16,4 +16,8 @@ class User < ActiveRecord::Base
   def admin?
     role == "admin"
   end
+
+  def has_voted?(review)
+    votes.where(review: review).any?
+  end
 end

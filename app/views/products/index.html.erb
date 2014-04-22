@@ -13,10 +13,10 @@
     <% count = 0 %>
     <% @products.each do |product| %>
       <% if count < 1 %>
-        <a id='<%= product.price %>' class='product_image size3 filter' href='<%= product_path(product)%>'>
+        <a id='<%= product.price %>' class='product_image size3 filter' href='<%= product_reviews_path(product)%>'>
           <%= image_tag(product.image.large, class: 'image') unless product.image.nil? %>
       <% else %>
-        <a id='<%= product.price %>' class='product_image size2 filter' href='<%= product_path(product)%>'>
+        <a id='<%= product.price %>' class='product_image size2 filter' href='<%= product_reviews_path(product)%>'>
           <%= image_tag(product.image.large, class: 'image') unless product.image.nil? %>
       <% end %>
       <% count += 1 %>
