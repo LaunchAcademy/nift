@@ -3,6 +3,7 @@ require 'spec_helper'
 describe User do
   context 'validations' do
     let(:blank) {['', nil]}
+    user = FactoryGirl.create(:user)
 
     it { should have_valid(:username).when(user.username) }
     it { should_not have_valid(:username).when(*blank) }

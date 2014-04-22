@@ -11,6 +11,7 @@
 
     <div class = "review-vote small-1 columns">
 
+
       <div class = "upvote">
         <%= link_to "<i class='fa fa-sort-up'></i>".html_safe, votes_path(review_id: review.id, value: 1), method: :post, id: "up"%>
       </div>
@@ -19,6 +20,8 @@
 
       <div class = "downvote">
        <%= link_to "<i class='fa fa-sort-down'></i>".html_safe, votes_path(review_id: review.id, value: '-1'), method: :post, id: "down"%>
+      </div>
+      <%= review.vote_count %>
       </div>
 
     </div>

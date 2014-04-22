@@ -1,6 +1,10 @@
-<%= simple_form_for [@product, @review] do |f| %>
-  <%= f.input :rating, collection: Review::RATING_VALUES, empty: true, required: true %>
-  <%= f.input :comment %>
-  <%= f.submit%>
-<%- end -%>
+<div class='row'>
+  <div class="input_form">
+    <%= simple_form_for [@product, @review] do |f| %>
+      <%= f.input :rating, collection: Review::RATING_VALUES, empty: true, required: true %>
+      <%= f.input :comment %>
+      <%= f.submit%>
+    <%- end -%>
+  </div>
+</div>
 

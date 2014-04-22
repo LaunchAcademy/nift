@@ -24,7 +24,7 @@ feature 'reviewer creates a review', %Q{
 
     expect(current_path).to eql(product_reviews_path(product))
     expect(page).to have_content('This product is the most awesomest thing lyke...ever...omg.')
-    expect(page).to have_content("You're review has been successfully added.")
+    expect(page).to have_content("Your review has been successfully added.")
     expect(page).to have_content(user.username)
     expect(page).to have_content(product.name)
   end

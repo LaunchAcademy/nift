@@ -17,8 +17,8 @@ class ReviewsController < ApplicationController
     @review.product_id = @product.id
     @review.author_id  = current_user.id
     if @review.save
-      flash[:notice] = "You're review has been successfully added."
-      redirect_to product_reviews_path(@product)
+      flash[:notice] = "Your review has been successfully added."
+      redirect_to product_path(@product)
     else
       flash[:notice] = "Please fill in the required fields."
       render :new

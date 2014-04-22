@@ -1,4 +1,5 @@
 class Review < ActiveRecord::Base
+  after_create :update_product_average_rating
 
   RATING_VALUES = [1, 2, 3, 4, 5]
 
@@ -11,8 +12,12 @@ class Review < ActiveRecord::Base
   belongs_to :author,
     class_name: 'User',
     foreign_key: :author_id
-  belongs_to :product
+  belongs_to :product, counter_cache: true
   has_many :votes
 
+  private
 
+  def update_product_average_rating
+    product.update_average_rating
+  end
 end

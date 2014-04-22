@@ -40,9 +40,10 @@
 // $total-columns: 12;
 
 // We use these to control various global styles
-$body-bg: #292929;
+// $body-bg: #292933;
+$body-bg: #222636;
 $body-font-color: #fff;
-$body-font-family: "Gill Sans", "Helvetica", Helvetica, Arial, sans-serif;
+$body-font-family: "Open Sans", "Gill Sans", "Helvetica", Helvetica, Arial, sans-serif;
 // $body-font-weight: normal;
 // $body-font-style: normal;
 
@@ -55,8 +56,9 @@ $body-font-family: "Gill Sans", "Helvetica", Helvetica, Arial, sans-serif;
 // $default-float: left;
 
 // We use these as default colors throughout
-$primary-color: #FF7F12;
-$secondary-color: #C40A5A;
+// $primary-color: #FF7F12;
+$primary-color: #F2EA79;
+$secondary-color: #87133E;
 // $alert-color: #f04124;
 // $success-color: #005A31;
 $success-color: #01939A;
@@ -119,11 +121,12 @@ $global-radius: 0;
 // $include-html-type-classes: $include-html-classes;
 
 // We use these to control header font styles
-// $header-font-family: $body-font-family;
+$header-font-family: "Arvo", "Gill Sans", "Helvetica", Helvetica, sans-serif;
 // $header-font-weight: normal;
 // $header-font-style: normal;
 // $header-font-color: #222;
-$header-font-color: #FF7F12;
+// $header-font-color: #FF7F12;
+$header-font-color: #F2EA79;
 // $header-line-height: 1.4;
 // $header-top-margin: .2rem;
 // $header-bottom-margin: .5rem;
@@ -332,6 +335,7 @@ $header-font-color: #FF7F12;
 // We use these to control button text styles.
 // $button-font-family: $body-font-family;
 // $button-font-color: #fff;
+$button-font-color: #222636;
 // $button-font-color-alt: #333;
 // $button-font-tny: rem-calc(11);
 // $button-font-sml: rem-calc(13);
@@ -487,17 +491,17 @@ $header-font-color: #FF7F12;
 // $form-label-font-size: rem-calc(14);
 // $form-label-font-weight: normal;
 // $form-label-line-height: 1.5;
-$form-label-font-color: scale-color(#888, $lightness: 30%);
+$form-label-font-color: scale-color(#778, $lightness: 30%);
 // $form-label-bottom-margin: 0;
 // $input-font-family: inherit;
 // $input-font-color: rgba(0,0,0,0.75);
 $input-font-size: rem-calc(16);
-$input-bg-color: #777;
+$input-bg-color: #667;
 $input-focus-bg-color: scale-color(#fff, $lightness: -5%);
 // $input-border-color: scale-color(#fff, $lightness: -20%);
 // $input-focus-border-color: scale-color(#fff, $lightness: -40%);
 // $input-border-style: solid;
-// $input-border-width: 1px;
+$input-border-width: 0px;
 // $input-border-radius: $global-radius;
 // $input-disabled-bg: #ddd;
 // $input-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
@@ -505,7 +509,7 @@ $input-include-glowing-effect: false;
 
 // We use these to style the fieldset border and spacing.
 // $fieldset-border-style: solid;
-// $fieldset-border-width: 1px;
+$fieldset-border-width: 0px;
 // $fieldset-border-color: #ddd;
 // $fieldset-padding: rem-calc(20);
 // $fieldset-margin: rem-calc(18 0);
@@ -587,7 +591,7 @@ $input-include-glowing-effect: false;
 // $joyride-tip-timer-color: #666;
 
 // This changes up the styles for the close button
-// $joyride-tip-close-color: #777;
+// $joyride-tip-close-color: #666;
 // $joyride-tip-close-size: 24px;
 // $joyride-tip-close-weight: normal;
 
@@ -1134,7 +1138,7 @@ $input-include-glowing-effect: false;
 
 // Background color for the top bar
 // $topbar-bg: $topbar-bg-color;
-$topbar-bg: #484848;
+$topbar-bg: #444454;
 
 // Height and margin
 // $topbar-height: 45px;
@@ -1146,9 +1150,9 @@ $topbar-title-font-style: oblique;
 // $topbar-title-font-size: rem-calc(17);
 
 // Style the top bar dropdown elements
-// $topbar-dropdown-bg: #333;
+$topbar-dropdown-bg: #334;
 // $topbar-dropdown-link-color: #fff;
-// $topbar-dropdown-link-bg: #333;
+$topbar-dropdown-link-bg: #334;
 // $topbar-dropdown-link-weight: normal;
 // $topbar-dropdown-toggle-size: 5px;
 // $topbar-dropdown-toggle-color: #fff;
@@ -1156,13 +1160,13 @@ $topbar-title-font-style: oblique;
 
 // Set the link colors and styles for top-level nav
 // $topbar-link-color: #A8CD1B;
-// $topbar-link-color-hover: #F3FAB6;
-// $topbar-link-color-active: #F3FAB6;
+$topbar-link-color-hover: #FFF;
+$topbar-link-color-active: #FFF;
 // $topbar-link-color-active-hover: #F3FAB6;
 // $topbar-link-weight: normal;
 // $topbar-link-font-size: rem-calc(13);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
-// $topbar-link-bg-hover: #006A31;
+$topbar-link-bg-hover: #667;
 // $topbar-link-bg-active: $primary-color;
 // $topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);
 // $topbar-link-font-family: $body-font-family;
@@ -1172,11 +1176,11 @@ $topbar-title-font-style: oblique;
 // $topbar-button-font-size: 0.75rem;
 // $topbar-button-top: 7px;
 
-// $topbar-dropdown-label-color: #777;
+$topbar-dropdown-label-color: #778;
 // $topbar-dropdown-label-text-transform: uppercase;
 // $topbar-dropdown-label-font-weight: bold;
 // $topbar-dropdown-label-font-size: rem-calc(10);
-// $topbar-dropdown-label-bg: #333;
+$topbar-dropdown-label-bg: #334;
 
 // Top menu icon styles
 // $topbar-menu-link-transform: uppercase;
@@ -1184,13 +1188,15 @@ $topbar-title-font-style: oblique;
 // $topbar-menu-link-weight: bold;
 // $topbar-menu-link-color: #fff;
 // $topbar-menu-icon-color: #fff;
-// $topbar-menu-link-color-toggled: #888;
-// $topbar-menu-icon-color-toggled: #888;
+$topbar-menu-link-color-toggled: #778;
+$topbar-menu-icon-color-toggled: #778;
 
 // Transitions and breakpoint styles
 // $topbar-transition-speed: 300ms;
 // Using rem-calc for the below breakpoint causes issues with top bar
 // $topbar-breakpoint: #{upper-bound($medium-range)}; // Change to 9999px for always mobile layout
+$topbar-breakpoint: 1000px;
+$topbar-media-query: "only screen and (min-width: 740px)";
 // $topbar-media-query: "only screen and (min-width: #{upper-bound($medium-range)})";
 
 // Divider Styles
