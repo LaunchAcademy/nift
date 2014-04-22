@@ -1,11 +1,10 @@
 <div class='main_content'>
-  <h2>Product Name: <%=@product.name%></h2>
-
   <div class='product_display'>
     <div class='product_display_image'><%= image_tag(@product.image.medium) %></div>
     <div class='product_display_description'>
+      <h3 class='product_display_name'>Product Name: <%=@product.name%></h2>
       <p class='product_display_text'><%=@product.description %></p>
-      <p class='review_link'><%=link_to 'Review this product', new_product_review_path(@product) %></p>
+      <h4 class='review_link'><%=link_to 'Review this product', new_product_review_path(@product) %></h4>
     </div>
   </div>
 
