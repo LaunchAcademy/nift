@@ -2,6 +2,7 @@ class ProductsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
 
   def index
+    binding.pry
     if params[:sort_query]
       @products = Product.page(params[:page]).order(params[:sort_query] => :desc)
     else
@@ -11,6 +12,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    @vote = Vote.new
   end
 
   def new

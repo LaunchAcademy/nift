@@ -7,10 +7,4 @@ class Vote < ActiveRecord::Base
   belongs_to :user
   belongs_to :review
 
-  after_save :update_review
-  def update_review
-   self.review.vote_count += value
-   self.review.save
-  end
-
 end
