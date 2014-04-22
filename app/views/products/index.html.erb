@@ -1,18 +1,9 @@
-<div class='product_sort'>
-  <%= simple_form_for :sort_query, url: products_path, method: :get do |f| %>
-    <%= f.input :sort, collection: [['Highest rated', 'average_rating'], ['Popularity', 'reviews_count'], ['Release Date', 'release_date'], ['Newest', 'created_at']] %>
-    <%= f.submit %>
-  <% end %>
-</div>
-
-<div class='row'></div>
-
 <div class='main_content'>
   <div class="product_sort_links">
-    <a href="#" class="sort_link">Highest rated</a>
-    <a href="#" class="sort_link">Popularity</a>
-    <a href="#" class="sort_link">Newest</a>
-    <a href="#" class="sort_link">Release date</a>
+    <%= link_to 'Highest Rated', products_path(sort_query: 'average_rating') %>
+    <%= link_to 'Popularity', products_path(sort_query: 'reviews_count') %>
+    <%= link_to 'Newest', products_path(sort_query: 'created_at') %>
+    <%= link_to 'Release Date', products_path(sort_query: 'release_date') %>
   </div>
 
   <div class='isotope js-isotope small-centered' id='productContainer'>

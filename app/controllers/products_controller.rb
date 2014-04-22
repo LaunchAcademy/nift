@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
 
   def index
     if params[:sort_query]
-      @products = Product.page(params[:page]).order(params[:sort_query][:sort])
+      @products = Product.page(params[:page]).order(params[:sort_query] => :desc)
     else
       @products = Product.page(params[:page]).order(:average_rating)
     end
