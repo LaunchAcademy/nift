@@ -13,11 +13,12 @@ So I can influence their ranking
 
   describe "a signed-in user can upvote on a review" do
     let(:user) {FactoryGirl.create(:user)}
+    let(:product) {FactoryGirl.create(:product)}
     let(:review) {FactoryGirl.create(:review)}
 
     scenario "can be upvoted" do
       sign_in_as(user)
-      visit product_reviews_path(review.product)
+      visit product_path(review.product)
       within('div.review-vote') do
         expect(page).to have_content('0')
         expect(page).to_not have_content('1')
@@ -65,7 +66,7 @@ So I can influence their ranking
     end
 
     scenario "a signed-out user cannot vote on reviews" do
-      visit product_reviews_path(review.product)
+      visit product_path(review.product)
       within('div.review-vote') do
         expect(page).to have_content('0')
         click_link 'up'
