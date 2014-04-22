@@ -14,7 +14,7 @@ gem 'carrierwave'
 gem 'rmagick', require: false
 gem 'fog'
 gem 'kaminari'
-# gem 'sendgrid'
+gem 'sendgrid'
 
 group :doc do
   gem 'sdoc', require: false
