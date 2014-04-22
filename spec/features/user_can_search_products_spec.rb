@@ -19,7 +19,7 @@ feature 'user can search products', %q{
     FactoryGirl.create(:product, name: "Mac")
     visit root_path
     fill_in 'query', with: "Mac"
-    click_button 'Submit'
+    click_button 'Search'
 
     expect(page).to have_content('Mac')
     expect(page).to_not have_content('Portable Iceberg Lettuce Synthetic Grinder')

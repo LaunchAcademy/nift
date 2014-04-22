@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Review do
-  context 'validations' do
+  describe 'validations' do
     before(:each) do
       FactoryGirl.create(:review)
     end
@@ -14,26 +14,28 @@ describe Review do
     it { should validate_uniqueness_of(:author_id).scoped_to(:product_id) }
   end
 
-  context 'associations' do
+  describe 'associations' do
     it { should belong_to(:author) }
     it { should belong_to(:product) }
     it { should have_many(:votes) }
 
-    let(:product) {FactoryGirl.create(:product)}
-
     it 'updates product review count when a review is created' do
+      product = FactoryGirl.create(:product)
       prior_count = product.reviews_count
       FactoryGirl.create(:review)
+      product.save
 
       expect(product.reviews_count).to eq(prior_count + 1)
     end
+  end
 
-    describe '#update_product_average_rating' do
-      it 'updates product average rating when a review is created' do
-        review2 = FactoryGirl.create(:review, rating: 3)
+  describe '#update_product_average_rating' do
+    it 'updates product average rating when a review is created' do
+      product = FactoryGirl.create(:product)
+      review1 = FactoryGirl.create(:review, rating: 5)
+      review2 = FactoryGirl.create(:review, rating: 3)
 
-        expect(product.average_rating).to eq((review.rating + review2.rating) / 2)
-      end
+      expect(product.average_rating).to eq(4)
     end
   end
 end

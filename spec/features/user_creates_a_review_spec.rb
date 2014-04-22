@@ -14,15 +14,15 @@ feature 'reviewer creates a review', %Q{
     user    = FactoryGirl.create(:user)
     product = FactoryGirl.create(:product)
     sign_in_as(user)
-    visit product_reviews_path(product)
+    visit product_path(product)
     expect(page).to_not have_content('This product is the most awesomest thing lyke...ever...omg.')
 
-    click_on 'New Review'
+    click_on 'Review this product'
     select 5, from: 'Rating'
     fill_in 'Comment', with: 'This product is the most awesomest thing lyke...ever...omg.'
     click_on 'Create Review'
 
-    expect(current_path).to eql(product_reviews_path(product))
+    expect(current_path).to eql(product_path(product))
     expect(page).to have_content('This product is the most awesomest thing lyke...ever...omg.')
     expect(page).to have_content("Your review has been successfully added.")
     expect(page).to have_content(user.username)
@@ -34,8 +34,8 @@ feature 'reviewer creates a review', %Q{
     product = FactoryGirl.create(:product)
     sign_in_as(user)
 
-    visit product_reviews_path(product)
-    click_on 'New Review'
+    visit product_path(product)
+    click_on 'Review this product'
     click_on 'Create Review'
 
     expect(page).to have_content("Please fill in the required fields.")
@@ -45,17 +45,12 @@ feature 'reviewer creates a review', %Q{
   scenario 'a signed out user cannot create a review' do
     product = FactoryGirl.create(:product)
 
-    visit product_reviews_path(product)
+    visit product_path(product)
     expect(page).to have_content(product.name)
 
-    click_on 'New Review'
+    click_on 'Review this product'
     expect(current_path).to eq('/users/sign_in')
   end
-
-
-
-
-
 end
 
 
