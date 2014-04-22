@@ -42,6 +42,7 @@ feature 'user uploads an image', %q{
     attach_file('product_image', Rails.root + 'spec/fixtures/images/H1N1_USA_Map.svg')
     click_on 'Submit'
 
-    expect(page).to have_content('You are not allowed to upload "svg" files')
+    expect(current_path).to eq(new_product_path)
+    expect(page).to have_content("can't be blank")
   end
 end

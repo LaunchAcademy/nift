@@ -8,13 +8,6 @@ $(document).ready(function() {
     $(this).css('background-color',color);
   })
 
-  // select sort field from hidden form
-  // $('.sort_link').on('click', function() {
-  //   var link = $(this).text();
-  //   $("select[name='q[sort]'").find('option:contains('+link+')').attr('selected', true);
-  //   $('.sort_query').submit();
-  // });
-
   // display details when product title is clicked
   $('.description').on('click', function(event) {
     event.preventDefault();
