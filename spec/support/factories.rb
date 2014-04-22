@@ -16,8 +16,6 @@ FactoryGirl.define do
     description 'Just your everyday Grinder'
     url 'check out amazon'
     price '9.99'
-    image {[FactoryGirl.create(:image)]}
-    user
     company
   end
 
