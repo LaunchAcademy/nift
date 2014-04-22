@@ -16,9 +16,9 @@ feature 'user views one product', %q{
   scenario 'a user is sent to a product page from the index page' do
     product = FactoryGirl.create(:product)
     visit root_path
-    click_on 'image'
+    find(:css, 'a.product_image').click
 
-    expect(page).to have_css(product.image)
+    expect(page).to have_css('div.product_display_image img')
     expect(page).to have_content('Review this product')
   end
 end

@@ -31,7 +31,7 @@ feature 'a user creates a new product', %q{
 
     expect(Product.count).to eq(prior_product_count + 1)
     expect(Company.count).to eq(prior_company_count + 1)
-    expect(page).to have_content("You just created a new product")
+    expect(page).to have_content("Product submitted!")
   end
 
   scenario 'leave fields blank' do
