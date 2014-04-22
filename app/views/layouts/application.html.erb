@@ -4,9 +4,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+    <title>NIFT</title>
 
-    <%= stylesheet_link_tag    "application" %>
+    <%= stylesheet_link_tag "application",media: "all"%>
+    <link href="http://fonts.googleapis.com/css?family=Arvo" rel='stylesheet' type='text/css'>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel='stylesheet' type='text/css'>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
   </head>
@@ -15,12 +17,19 @@
     <%= render 'layouts/main_navbar' %>
     <%= render 'layouts/messages' %>
 
-    <h2 class='nift'>NIFT!</h2>
+    <div class='nift'>
+      <span class='logo_letter'>N</span>
+      <span class='logo_letter'>I</span>
+      <span class='logo_letter'>F</span>
+      <span class='logo_letter'>T</span>
+    </div>
+
     <p class='subheading'>Reviewing the latest startup products</p>
 
     <%= yield %>
 
     <%= javascript_include_tag "application" %>
+    <script>$(function(){ $(document).foundation(); });</script>
 
   </body>
 </html>

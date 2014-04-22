@@ -1,0 +1,34 @@
+<div class='main_content'>
+  <div class='product_display'>
+    <div class='product_display_image'><%= image_tag(@product.image.medium) %></div>
+    <div class='product_display_description'>
+      <h3 class='product_display_name'>Product Name: <%=@product.name%></h2>
+      <p class='product_display_text'><%=@product.description %></p>
+      <%=link_to 'Review this product', new_product_review_path(@product), class: 'button review_link' %>
+    </div>
+  </div>
+
+  <% @product.reviews.each do |review| %>
+    <div class = "review">
+      <!-- <div class="review"> -->
+        <div class='review-text'>
+          <p class='stars'><%= create_stars(review.rating) %><br>
+            <small>posted by <%= review.author.username %></small></p>
+          <p><%= review.comment %></p>
+        </div>
+
+        <div class = "review-vote">
+          <div class="upvote">
+            <%= link_to "<i class='fa fa-sort-up'></i>".html_safe, votes_path(review_id: review.id, value: 1), method: :post, id: "up"%>
+          </div>
+
+          <%= review.vote_count %>
+
+          <div class = "downvote">
+            <%= link_to "<i class='fa fa-sort-down'></i>".html_safe, votes_path(review_id: review.id, value: '-1'), method: :post, id: "down"%>
+          </div>
+        </div>
+      <!-- </div> -->
+    </div>
+  <%- end -%>
+</div>

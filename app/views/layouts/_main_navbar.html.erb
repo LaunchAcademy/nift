@@ -1,8 +1,8 @@
 <div class="contain-to-grid">
-  <nav class="top-bar">
+  <nav class="top-bar" data-topbar>
     <ul class="title-area">
       <li class="name">
-        <!-- <h1><a href="/">NIFT</a></h1> -->
+        <h1><a href="/">My Site</a></h1>
       </li>
       <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
     </ul>
@@ -11,7 +11,7 @@
 
       <ul class="left">
         <% if user_signed_in? %>
-          <li class='signed_in_as'><%= "Signed in as #{current_user.username}" %></li>
+          <li class='signed_in_as'><a><%= "Signed in as #{current_user.username}" %></a></li>
           <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
         <% else %>
           <li><%= link_to 'Sign In', new_user_session_path %></li>
@@ -24,10 +24,10 @@
         <li class="has-form">
           <div class="row collapse">
             <%= form_tag('/products/search', method: :get) do %>
-              <div class="large-8 small-9 columns">
+              <div class="large-7 small-8 columns">
                 <%= text_field_tag :query%>
               </div>
-              <div class="large-4 small-3 columns">
+              <div class="large-5 small-4 columns">
                 <%= submit_tag 'Search', class: "button expand" %>
               </div>
             <% end %>

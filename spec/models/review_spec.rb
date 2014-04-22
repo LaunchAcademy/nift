@@ -2,9 +2,6 @@ require 'spec_helper'
 
 describe Review do
   context 'validations' do
-    before(:each) do
-      FactoryGirl.create(:review)
-    end
     it { should validate_presence_of(:rating) }
     it { should validate_presence_of(:author_id) }
     it { should have_valid(:rating).when(1, 2, 3, 4, 5) }
@@ -18,16 +15,22 @@ describe Review do
     it { should belong_to(:author) }
     it { should belong_to(:product) }
     it { should have_many(:votes) }
-  end
 
-  context 'instance methods' do
-    it "can calculate total vote value" do
-      review  = FactoryGirl.create(:review)
-      2.times {FactoryGirl.create(:vote, review: review)}
-      FactoryGirl.create(:vote, review: review, value: -1)
+    let(:product) {FactoryGirl.create(:product)}
 
-      expect(review.vote_count).to eql(1)
+    it 'updates product review count when a review is created' do
+      prior_count = product.reviews_count
+      FactoryGirl.create(:review)
+
+      expect(product.reviews_count).to eq(prior_count + 1)
+    end
+
+    describe '#update_product_average_rating' do
+      it 'updates product average rating when a review is created' do
+        review2 = FactoryGirl.create(:review, rating: 3)
+
+        expect(product.average_rating).to eq((review.rating + review2.rating) / 2)
+      end
     end
   end
-
 end
