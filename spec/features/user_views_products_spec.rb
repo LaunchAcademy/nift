@@ -11,6 +11,7 @@ feature 'user views products', %q{
   # *By default, the products are sorted by rank in descending order
   # *The visitor can go to the next page of products
   # *By default, the page displays 20 products
+  # *The visitor can select alternate sort criteria
   # *The root url sends the user to the display page
 
   scenario 'a registered user is sent to the index page after signing in' do
@@ -36,5 +37,13 @@ feature 'user views products', %q{
 
     click_on '2'
     expect(page).to have_css('div.product_image', count: 10)
+  end
+
+  scenario 'user changes sort criteria' do
+    FactoryGirl.create_list(:product, 30)
+    visit root_path
+    click_on 'Newest'
+
+    expect(css: ".isotope:first-child").to have_css("products/#{Product.first.id}")
   end
 end
