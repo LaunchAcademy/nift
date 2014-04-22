@@ -38,6 +38,6 @@ $(window).load(function() {
     layoutMode: 'masonry',
     masonry: {
       columnWidth: 50,
-    },
+    }
   });
 });
