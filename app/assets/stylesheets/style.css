@@ -175,7 +175,6 @@ img {
   background: -webkit-linear-gradient(bottom, rgba(0,0,0,.8), rgba(0,0,0,.3));
   background: -moz-linear-gradient(bottom, rgba(0,0,0,.8), rgba(0,0,0,.3));
   padding: 6px;
-  text-align: justify;
   position: absolute;
   bottom: 0;
   margin: 0;
@@ -185,6 +184,10 @@ img {
   transition: height .5s;
   -webkit-transition: height .5s;
   -moz-transition: height .5s;
+}
+
+.product_title {
+  text-align: justify;
 }
 
 .size1 .product_title {
