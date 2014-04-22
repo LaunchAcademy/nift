@@ -116,7 +116,8 @@ img {
   -moz-transition-property: height, width;
   transition-property: height, width;
   max-width: 800px;
-  max-height: 800px;
+  max-height: 1600px;
+  overflow: hidden;
 }
 .isotope .isotope-item {
   -webkit-transition-property: -webkit-transform, opacity;
@@ -150,7 +151,7 @@ img {
   -moz-transform: scale(1.05);
 }
 
-@media {
+@media all {
   .size1 {
     width: 200px;
     z-index: 4;
@@ -225,8 +226,10 @@ img {
 }
 
 .pagination {
-  text-align: right;
+  text-align: left;
   clear: both;
+  padding: 10px 0;
+  margin: 2px;
 }
 
 .product_display_image {
@@ -271,7 +274,11 @@ img {
   float: left;
 }
 
-@media (max-width: 600px) {
+input:-webkit-autofill, textarea:-webkit-autofill {
+  background-color: #DDD;
+}
+
+@media all and (max-width: 600px) {
   .input_form {margin-left: 50px; margin-right: 50px;}
   .nift {margin-left: 50px; margin-right: 50px;}
   .subheading {margin-left: 50px; margin-right: 50px;}

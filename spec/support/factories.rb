@@ -1,3 +1,4 @@
+include ActionDispatch::TestProcess
 
 FactoryGirl.define do
   factory :user, aliases: [:author] do
@@ -6,16 +7,13 @@ FactoryGirl.define do
     password '12345678'
   end
 
-  factory :image do
-    title 'test image'
-    file {fixture_file_upload('/spec/fixures/images/pie_eating_contest.jpg')}
-  end
-
   factory :product do
     sequence(:name) {|n| "Portable Iceberg Lettuce Synthetic Grinder #{n}"}
     description 'Just your everyday Grinder'
     url 'check out amazon'
     price '9.99'
+    image {fixture_file_upload(Rails.root.to_s + '/spec/fixtures/images/pie_eating_contest.jpg')}
+    user
     company
   end
 
