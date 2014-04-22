@@ -1,15 +1,17 @@
-<h1>Search Results</h1>
+<div class='main_content'>
+  <h3>Search Results</h3>
 
-<% if @products.nil? %>
-  <p>No results found.</p>
-<% else %>
+  <% if @products.nil? %>
+    <p>No results found.</p>
+  <% else %>
 
-  <p><%= "#{@products.count} result(s) found." %></p>
+    <p><%= "#{@products.count} result(s) found." %></p>
 
-  <ul>
-    <% @products.each do |product| %>
-      <li><%= product.name %></li>
-    <% end %>
-  </ul>
+    <ul class='no-bullet'>
+      <% @products.each do |product| %>
+        <li><%= link_to product.name, product_path(product) %></li>
+      <% end %>
+    </ul>
 
-<% end %>
+  <% end %>
+</div>

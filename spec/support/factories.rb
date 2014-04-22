@@ -6,11 +6,17 @@ FactoryGirl.define do
     password '12345678'
   end
 
+  factory :image do
+    title 'test image'
+    file {fixture_file_upload('/spec/fixures/images/pie_eating_contest.jpg')}
+  end
+
   factory :product do
     sequence(:name) {|n| "Portable Iceberg Lettuce Synthetic Grinder #{n}"}
     description 'Just your everyday Grinder'
     url 'check out amazon'
     price '9.99'
+    image {[FactoryGirl.create(:image)]}
     user
     company
   end
@@ -21,10 +27,6 @@ FactoryGirl.define do
     url 'www.wayneindustries.com'
   end
 
-  factory :image do
-    title 'test image'
-    file {fixture_file_upload('/spec/fixures/images/pie_eating_contest.jpg')}
-  end
 
   factory :review do
     rating '5'

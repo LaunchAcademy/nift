@@ -335,6 +335,7 @@ $header-font-color: #F2EA79;
 // We use these to control button text styles.
 // $button-font-family: $body-font-family;
 // $button-font-color: #fff;
+$button-font-color: #222636;
 // $button-font-color-alt: #333;
 // $button-font-tny: rem-calc(11);
 // $button-font-sml: rem-calc(13);
@@ -500,7 +501,7 @@ $input-focus-bg-color: scale-color(#fff, $lightness: -5%);
 // $input-border-color: scale-color(#fff, $lightness: -20%);
 // $input-focus-border-color: scale-color(#fff, $lightness: -40%);
 // $input-border-style: solid;
-// $input-border-width: 1px;
+$input-border-width: 0px;
 // $input-border-radius: $global-radius;
 // $input-disabled-bg: #ddd;
 // $input-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
@@ -508,7 +509,7 @@ $input-include-glowing-effect: false;
 
 // We use these to style the fieldset border and spacing.
 // $fieldset-border-style: solid;
-// $fieldset-border-width: 1px;
+$fieldset-border-width: 0px;
 // $fieldset-border-color: #ddd;
 // $fieldset-padding: rem-calc(20);
 // $fieldset-margin: rem-calc(18 0);
@@ -1137,7 +1138,7 @@ $input-include-glowing-effect: false;
 
 // Background color for the top bar
 // $topbar-bg: $topbar-bg-color;
-$topbar-bg: #474752;
+$topbar-bg: #444454;
 
 // Height and margin
 // $topbar-height: 45px;
