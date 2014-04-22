@@ -14,6 +14,7 @@ gem 'carrierwave'
 gem 'rmagick', require: false
 gem 'fog'
 gem 'kaminari'
+gem 'sendgrid'
 
 group :doc do
   gem 'sdoc', require: false
@@ -41,3 +42,4 @@ end
 group :production do
   gem 'rails_12factor'
 end
+
