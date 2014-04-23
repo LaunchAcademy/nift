@@ -2,6 +2,7 @@
   <%= simple_form_for [@product, @review] do |f| %>
     <%= f.input :rating, collection: Review::RATING_VALUES, empty: true, required: true %>
     <%= f.input :comment %>
+    <br>
     <%= f.button :submit %>
   <%- end -%>
 </div>

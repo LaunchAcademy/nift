@@ -12,13 +12,15 @@ $(document).ready(function() {
   $('.description').on('click', function(event) {
     event.preventDefault();
     $(this).toggleClass('show-description');
-    $(this).find('.arrow').fadeToggle(100);
+    $(this).find('.arrow').fadeToggle(250);
   });
 
   // remove tint and show arrow when hovering on an image
   $('.product_image').hover(function() {
     $(this).find('.overlay').toggleClass('tint');
-    $(this).find('.arrow').fadeToggle(200);
+    if(!$(this).find('.description').hasClass('show-description')) {
+      $(this).find('.arrow').fadeToggle(0);
+    };
   });
 });
 
