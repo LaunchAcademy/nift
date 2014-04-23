@@ -1,4 +1,4 @@
-Nifty::Application.routes.draw do
+Nift::Application.routes.draw do
   resources :products, only: [:index, :show, :new, :create] do
     get 'search', on: :collection
     resources :reviews, only: [:new, :create]
@@ -9,7 +9,7 @@ Nifty::Application.routes.draw do
   root 'products#index'
 end
 
-  # resources :nifty, only: [:new, :create]
+  # resources :nift, only: [:new, :create]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
