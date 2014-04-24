@@ -33,6 +33,7 @@ describe Review do
     it 'updates product average rating when a review is created' do
       product = FactoryGirl.create(:product)
       review1 = FactoryGirl.create(:review, rating: 5, product: product)
+      product.reload
       review2 = FactoryGirl.create(:review, rating: 3, product: product)
       product.reload
 
