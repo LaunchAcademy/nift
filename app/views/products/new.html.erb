@@ -1,5 +1,5 @@
 <div class="input_form">
-  <h2>Create a New Product</h2>
+  <h3>Add a New Product</h2>
   <div class="right">*Required Fields</div>
   <br>
   <%= simple_form_for @product, html: {multipart: true} do |f| %>
@@ -22,5 +22,5 @@
 
     <%= f.button :submit, "Submit" %>
   <% end %>
+  <div class='back-link'><%= link_to 'Cancel', products_path %></div>
 </div>
-

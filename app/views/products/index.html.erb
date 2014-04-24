@@ -1,9 +1,8 @@
 <div class='main_content'>
   <div class="product_sort_links">
     <%= link_to 'Highest Rated', products_path(sort_query: 'average_rating') %>
-    <%= link_to 'Popularity', products_path(sort_query: 'reviews_count') %>
+    <%= link_to 'Most Reviewed', products_path(sort_query: 'reviews_count') %>
     <%= link_to 'Newest', products_path(sort_query: 'created_at') %>
-    <%= link_to 'Release Date', products_path(sort_query: 'release_date') %>
   </div>
 
   <div class='isotope js-isotope small-centered' id='productContainer'>
@@ -14,7 +13,7 @@
           <span class="overlay tint"><%= image_tag(product.image.large, class: 'image') unless product.image.nil? %></span>
       <% else %>
         <a id='<%= "image-#{count}-product-#{product.id}" %>' class='product_image size1' href='<%= product_path(product)%>'>
-          <span class="overlay tint"><%= image_tag(product.image.large, class: 'image') unless product.image.nil? %></span>
+          <span class="overlay tint"><%= image_tag(product.image.medium, class: 'image') unless product.image.nil? %></span>
       <% end %>
       <% count += 1 %>
       <div class='description'>

@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Nifty::Application.load_tasks
+Nift::Application.load_tasks

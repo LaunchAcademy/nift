@@ -148,6 +148,8 @@ GEM
     rake (10.2.2)
     rdoc (4.1.1)
       json (~> 1.4)
+    rename (1.0.2)
+      rails (>= 3.0.0)
     rmagick (2.13.2)
     rspec-core (2.14.8)
     rspec-expectations (2.14.5)
@@ -231,6 +233,7 @@ DEPENDENCIES
   quiet_assets
   rails (= 4.0.4)
   rails_12factor
+  rename
   rmagick
   rspec-rails
   sass-rails (~> 4.0.2)
