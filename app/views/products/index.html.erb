@@ -8,7 +8,7 @@
   <div class='isotope js-isotope small-centered' id='productContainer'>
     <% count = 1 %>
     <% @products.each do |product| %>
-      <% if [1,8,11].include?count %>
+      <% if [1,8,11].include?(count) %>
         <a id='<%= "image-#{count}-product-#{product.id}" %>' class='product_image size2' href='<%= product_path(product)%>'>
           <span class="overlay tint"><%= image_tag(product.image.large, class: 'image') unless product.image.nil? %></span>
       <% else %>

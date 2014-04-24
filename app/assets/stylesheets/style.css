@@ -232,7 +232,8 @@ img {
   text-align: left;
   clear: both;
   padding: 10px 0;
-  margin: 2px;
+  margin-left: 2px;
+  margin-bottom: 40px;
 }
 
 .product_display_image {

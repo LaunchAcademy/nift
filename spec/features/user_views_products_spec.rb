@@ -30,22 +30,24 @@ feature 'user views products', %q{
   end
 
   scenario 'user sees 15 products displayed on the index page' do
-    FactoryGirl.create_list(:product, 20)
+    FactoryGirl.create_list(:product, 16)
     visit root_path
 
     expect(page).to have_css('img', count: 15)
 
     click_on '2'
-    expect(page).to have_css('img', count: 5)
+    expect(page).to have_css('img', count: 1)
   end
 
   scenario 'user changes sort criteria' do
     FactoryGirl.create_list(:product, 20)
+    last_product = Product.order(created_at: :desc).take
+
     visit root_path
     click_on 'Newest'
 
-    within(:css, "div.isotope:first-child") do
-      expect(page).to have_css("a#image-#{1}-product#{Product.last.id}")
+    within '#productContainer a:first-child' do
+      expect(page).to have_content("Portable Iceberg Lettuce Synthetic Grinder " + last_product.id.to_s)
     end
   end
 end
