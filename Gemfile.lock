@@ -115,6 +115,7 @@ GEM
     net-ssh (2.8.0)
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
+    orderly (0.0.2)
     orm_adapter (0.5.0)
     pg (0.17.1)
     polyglot (0.3.4)
@@ -231,6 +232,7 @@ DEPENDENCIES
   jquery-rails
   kaminari
   launchy
+  orderly
   pg
   pry-rails
   quiet_assets

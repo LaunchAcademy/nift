@@ -8,9 +8,9 @@ FactoryGirl.define do
   end
 
   factory :product do
-    sequence(:name) {|n| "Portable Iceberg Lettuce Synthetic Grinder #{n}"}
-    description 'Just your everyday Grinder'
-    url 'check out amazon'
+    sequence(:name) {|n| "Product#{n}"}
+    description 'description text'
+    url 'http://www.amazon.com'
     price '9.99'
     image {fixture_file_upload(Rails.root.to_s + '/spec/fixtures/images/pie_eating_contest.jpg')}
     user

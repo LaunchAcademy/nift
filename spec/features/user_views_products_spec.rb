@@ -36,18 +36,18 @@ feature 'user views products', %q{
     expect(page).to have_css('img', count: 15)
 
     click_on '2'
+
     expect(page).to have_css('img', count: 1)
   end
 
   scenario 'user changes sort criteria' do
-    FactoryGirl.create_list(:product, 20)
-    last_product = Product.order(created_at: :desc).take
+    products = FactoryGirl.create_list(:product, 2)
+    first_product = products[0]
+    last_product = products[1]
 
     visit root_path
     click_on 'Newest'
 
-    within '#productContainer a:first-child' do
-      expect(page).to have_content("Portable Iceberg Lettuce Synthetic Grinder " + last_product.id.to_s)
-    end
+    last_product.name.should appear_before(first_product.name)
   end
 end
