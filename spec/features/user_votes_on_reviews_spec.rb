@@ -27,7 +27,7 @@ So I can influence their ranking
           click_link 'up'
         end
       end
-      within(':css, div.review-vote') do
+      within(:css, 'div.review-vote') do
         expect(page).to have_content('1')
         expect(page).to_not have_content('0')
       end
@@ -40,11 +40,11 @@ So I can influence their ranking
       within('div.review-vote') do
         expect(page).to have_content('0')
         expect(page).to_not have_content('-1')
-        within(':css, div.downvote') do
+        within(:css, 'div.downvote') do
           click_link 'down'
         end
       end
-      within(':css, div.review-vote') do
+      within(:css, 'div.review-vote') do
         expect(page).to have_content('-1')
         expect(page).to_not have_content('0')
       end
@@ -57,7 +57,7 @@ So I can influence their ranking
         expect(page).to have_content('0')
         click_link 'up'
       end
-      within(':css, div.review-vote') do
+      within(:css, 'div.review-vote') do
         expect(page).to have_content('1')
         click_link 'up'
       end
