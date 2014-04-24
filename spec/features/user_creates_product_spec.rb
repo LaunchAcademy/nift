@@ -27,7 +27,7 @@ feature 'a user creates a new product', %q{
 
     click_on 'New Product'
     fill_out_new_product_form
-    click_on 'Submit'
+    click_button 'Submit'
 
     expect(Product.count).to eq(prior_product_count + 1)
     expect(Company.count).to eq(prior_company_count + 1)

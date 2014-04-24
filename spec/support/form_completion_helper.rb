@@ -22,5 +22,6 @@ module FormCompletionHelper
     fill_in 'Location', with: 'Bar Harbor, ME'
     fill_in 'Company Website', with: 'www.fishsicles.com'
     fill_in 'Product Website', with: 'www.fishsicles.com'
+    attach_file('product_image', Rails.root + 'spec/fixtures/images/pie_eating_contest.jpg')
   end
 end
