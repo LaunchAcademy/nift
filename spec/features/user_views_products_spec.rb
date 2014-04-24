@@ -47,7 +47,7 @@ feature 'user views products', %q{
     click_on 'Newest'
 
     within '#productContainer a:first-child' do
-      expect(page).to have_content("Portable Iceberg Lettuce Synthetic Grinder " + last_product.id.to_s)
+      expect(page).to have_css('image-1-product-' + last_product.id.to_s)
     end
   end
 end

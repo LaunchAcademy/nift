@@ -15,6 +15,7 @@ feature 'reviewer creates a review', %Q{
     product = FactoryGirl.create(:product)
     sign_in_as(user)
     visit product_path(product)
+
     expect(page).to_not have_content('This product is the most awesomest thing lyke...ever...omg.')
 
     click_on 'Review this product'
@@ -49,6 +50,7 @@ feature 'reviewer creates a review', %Q{
     expect(page).to have_content(product.name)
 
     click_on 'Review this product'
+
     expect(current_path).to eq('/users/sign_in')
   end
 end

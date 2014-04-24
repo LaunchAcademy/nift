@@ -22,6 +22,7 @@ feature 'user uploads an image', %q{
     click_on 'Submit'
 
     product = user.products.last
+
     expect(product.image).not_to be_nil
   end
 
@@ -32,6 +33,7 @@ feature 'user uploads an image', %q{
     fill_in 'product_remote_image_url', with: 'http://memeheroes.com/c/99bde-im-bubble-tea.jpg'
     click_on 'Submit'
     product = Product.find_by(user_id: user.id)
+
     expect(product.image).not_to be_nil
   end
 
