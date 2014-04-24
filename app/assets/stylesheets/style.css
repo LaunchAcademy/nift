@@ -291,6 +291,11 @@ input:-webkit-autofill, textarea:-webkit-autofill {
   background-color: #DDD;
 }
 
+.back-link {
+  clear: both;
+  margin-bottom: 40px;
+}
+
 @media all and (max-width: 600px) {
   .input_form {margin-left: 50px; margin-right: 50px;}
   .nift {margin-left: 50px; margin-right: 50px;}
