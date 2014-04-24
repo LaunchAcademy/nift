@@ -41,17 +41,11 @@ feature 'user views products', %q{
 
   scenario 'user changes sort criteria' do
     FactoryGirl.create_list(:product, 20)
-
     visit root_path
-
-    within '#productContainer a:first-child' do
-      expect(page).to have_content("Portable Iceberg Lettuce Synthetic Grinder 1")
-    end
-
 
     click_on 'Newest'
     within '#productContainer a:first-child' do
-      expect(page).to have_content("Portable Iceberg Lettuce Synthetic Grinder 20")
+      expect(page).to have_content("Portable Iceberg Lettuce Synthetic Grinder " + Product.last.id.to_s)
     end
   end
 end
