@@ -22,8 +22,8 @@ describe Review do
     it 'updates product review count when a review is created' do
       product = FactoryGirl.create(:product)
       prior_count = product.reviews_count
-      FactoryGirl.create(:review)
-      product.save
+      FactoryGirl.create(:review, product: product)
+      product.reload
 
       expect(product.reviews_count).to eq(prior_count + 1)
     end
@@ -32,8 +32,9 @@ describe Review do
   describe '#update_product_average_rating' do
     it 'updates product average rating when a review is created' do
       product = FactoryGirl.create(:product)
-      review1 = FactoryGirl.create(:review, rating: 5)
-      review2 = FactoryGirl.create(:review, rating: 3)
+      review1 = FactoryGirl.create(:review, rating: 5, product: product)
+      review2 = FactoryGirl.create(:review, rating: 3, product: product)
+      product.reload
 
       expect(product.average_rating).to eq(4)
     end

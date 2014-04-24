@@ -53,6 +53,7 @@ class ProductsController < ApplicationController
       :price,
       :url,
       :image,
+      :remote_image_url,
       company_attributes: [:name, :location, :url]
     )
   end
