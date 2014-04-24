@@ -2,7 +2,6 @@ class ProductsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
 
   def index
-    binding.pry
     if params[:sort_query]
       @products = Product.page(params[:page]).order(params[:sort_query] => :desc)
     else
