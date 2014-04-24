@@ -15,6 +15,7 @@ gem 'rmagick', require: false
 gem 'fog'
 gem 'kaminari'
 gem 'sendgrid'
+gem 'font-awesome-rails'
 
 group :doc do
   gem 'sdoc', require: false
