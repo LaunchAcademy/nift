@@ -185,10 +185,6 @@ img {
   -moz-transition: height .5s;
 }
 
-.product_title {
-  text-align: justify;
-}
-
 .size1 .product_title {
   font-family: 'Arvo', Helvetica, sans-serif;
   font-size: 1.1em;
