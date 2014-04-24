@@ -7,6 +7,8 @@ class VotesController < ApplicationController
       @vote.value = params[:value]
       if @vote.save
         redirect_to product_path(@review.product), notice: 'Your vote has been recorded.'
+      else
+        redirect_to product_path(@review.product), notice: 'There was an error with your vote.'
       end
     else
       redirect_to product_path(@review.product), notice: "Please sign in to vote!"
