@@ -32,13 +32,6 @@
   text-align: center;
   margin: 0 3px 10px 0;
   padding: 0 7px 0 11px;
-
-  /*color: #FF7F12;
-  background-color: #87133E;*/
-
-  /*color: #ADDE6C;*/
-  /*background-color: #36706F;*/
-
   color: #222636;
   background-color: #7FBD5E;
 }
@@ -96,14 +89,11 @@ img {
   margin: 0;
 }
 
-.isotope-item {
-  /*z-index: 2;*/
-}
-
 .isotope-hidden.isotope-item {
   pointer-events: none;
   z-index: 1;
 }
+
 .isotope,
 .isotope .isotope-item {
   -webkit-transition-duration: 0.8s;
