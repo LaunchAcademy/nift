@@ -247,8 +247,12 @@ img {
 }
 
 .product_display_text {
-  height: 283px;
+  height: 265px;
   overflow: scroll;
+}
+
+.product_display_company_name {
+  color: #FFF;
 }
 
 .review_link {
@@ -256,8 +260,12 @@ img {
   font-family: 'Arvo', Helvetica, sans-serif;
   color: #222636;
   background-color: #01939A;
-  margin-top: 20px;
   padding: 4px 8px;
+  margin: 20px 0;
+}
+
+.review_link:hover {
+  background-color: #DDD;
 }
 
 .stars {
@@ -267,10 +275,6 @@ img {
 
 .review {
   clear: both;
-}
-
-.review_link:hover {
-  background-color: #DDD;
 }
 
 .review-text {

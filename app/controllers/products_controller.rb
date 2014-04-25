@@ -11,6 +11,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    @company = @product.company
     @vote = Vote.new
   end
 
