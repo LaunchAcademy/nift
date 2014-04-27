@@ -3,10 +3,15 @@ Nift::Application.routes.draw do
     get 'search', on: :collection
     resources :reviews, only: [:new, :create]
   end
+
   resources :votes, only: :create
 
   devise_for :users
   root 'products#index'
+
+  controller :static do
+    get 'static/about' => :about
+  end
 end
 
   # resources :nift, only: [:new, :create]
