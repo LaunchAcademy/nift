@@ -267,6 +267,19 @@ input:-webkit-autofill, textarea:-webkit-autofill {
   background-color: #DDD;
 }
 
+.team-member {
+  margin: 20px 0;
+}
+
+.member-name {
+  color: #7FBD5E;
+}
+
+.team-member a {
+  padding-left: 20px;
+  color: #FFF;
+}
+
 .back-link {
   clear: both;
   margin-bottom: 40px;
@@ -310,7 +323,8 @@ input:-webkit-autofill, textarea:-webkit-autofill {
     text-align: center;
   }
   .main_content {
-    margin: 0 10px 60px 10px;
+    margin: 0 auto 60px auto;
+    padding: 0 10px;
   }
   .size1 {
     width: 100px;
@@ -328,7 +342,6 @@ input:-webkit-autofill, textarea:-webkit-autofill {
   }
   .size1 .product_details {
     font-size: 0.5em;
-    opacity: 0;
   }
   .size2 .product_title {
     font-size: 1.25em;
