@@ -1,28 +1,6 @@
-== README
+== Nift, find the next 'it' thing.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Nift was created for the up-and-coming, the latest in innovation, the products that are not quite there, but that should be. Nift introduces you to products that you probably have not heard of, but that you will hear of.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Browse the homepage to see the soon-to-be hottest gadgets. Think it's the next 'it' thing? Give it a high rating?? Think it will flop? Tell us why!
+Help out your fellow users and don't forget to upvote the thoughtful reviews, and downvote those annoying trolls.
