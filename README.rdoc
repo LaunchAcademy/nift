@@ -5,3 +5,7 @@ Nift was created for the up-and-coming, the latest in innovation, the products t
 Browse the homepage to see the soon-to-be hottest gadgets. Think it's the next 'it' thing? Give it a high rating! Think it will flop? Tell us why!
 
 Help out your fellow prophesiers and don't forget to upvote the thoughtful reviews, and downvote those annoying trolls.
+
+Nift was built by Barry Lam, Jacob Maude, Emily Williams and Paul Wilson.
+
+http://nift.herokuapp.com
