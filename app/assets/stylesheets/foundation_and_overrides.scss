@@ -1196,7 +1196,7 @@ $topbar-menu-icon-color-toggled: #778;
 // Using rem-calc for the below breakpoint causes issues with top bar
 // $topbar-breakpoint: #{upper-bound($medium-range)}; // Change to 9999px for always mobile layout
 $topbar-breakpoint: 1000px;
-$topbar-media-query: "only screen and (min-width: 740px)";
+$topbar-media-query: "only screen and (min-width: 825px)";
 // $topbar-media-query: "only screen and (min-width: #{upper-bound($medium-range)})";
 
 // Divider Styles

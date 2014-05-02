@@ -23,7 +23,7 @@
 .nift {
   width: 350px;
   font-family: 'Arvo', 'Gill sans', Helvetica, sans-serif;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.1em;
   margin: 100px 0 0 80px;
 }
 
@@ -31,14 +31,14 @@
   font-size: 4em;
   text-align: center;
   margin-bottom: 10px;
-  padding: 0 9px 0 11px;
+  padding: 0 9px;
   color: #222636;
   background-color: #7FBD5E;
 }
 
 .subheading {
   margin: 10px 0 30px 80px;
-  font-size: 0.85em;
+  font-size: 0.8em;
   letter-spacing: 0.05em;
 }
 
@@ -55,7 +55,7 @@
 
 .product_sort_links {
   font-family: 'Open Sans', Helvetica, sans-serif;
-  font-size: 0.84em;
+  font-size: 0.8em;
   padding-bottom: 20px;
 }
 
@@ -173,6 +173,7 @@ img {
 
 .pagination {
   text-align: left;
+  word-spacing: 0.75em;
   clear: both;
   padding: 10px 0;
   margin-left: 2px;
@@ -204,6 +205,10 @@ img {
   background-color: #01939A;
   padding: 4px 8px;
   margin: 20px 0;
+}
+
+.review_link:hover {
+  background-color: #DDD;
 }
 
 .stars {
@@ -267,8 +272,8 @@ input:-webkit-autofill, textarea:-webkit-autofill {
     -webkit-transform: scale(1.05);
     -moz-transform: scale(1.05);
   }
-  .review_link:hover {
-    background-color: #DDD;
+  .tint img:hover {
+    opacity: 1;
   }
   .show-description {
     height: 70%;
@@ -314,6 +319,9 @@ input:-webkit-autofill, textarea:-webkit-autofill {
   }
   .product_sort_links {
     text-align: center;
+    width: 100%;
+    margin-left: 4px;
+    margin-right: 6px;
   }
   .main_content {
     margin: 0 auto 60px auto;
@@ -350,12 +358,11 @@ input:-webkit-autofill, textarea:-webkit-autofill {
     text-align: center;
   }
   .product_display_image {
-    margin: 0 auto;
+    margin: 20px;
     display: block;
   }
   .product_display_description {
     width: 100%;
-    margin: 0 auto;
     padding: 0 10px;
   }
   .review-text {

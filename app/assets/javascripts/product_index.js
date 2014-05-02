@@ -12,7 +12,7 @@ $(document).ready(function() {
   // display details when product title is clicked
   $('.description').on('click', function(event) {
 
-    if ($('.size1').css('width') == '100px') {
+    if ($('.size1').css('width') == '200px') {
       event.preventDefault();
       $(this).toggleClass('show-description');
       $(this).find('.arrow').fadeToggle(250);
@@ -23,7 +23,7 @@ $(document).ready(function() {
   // remove tint and show arrow when hovering on an image
   $('.product_image').hover(function() {
 
-    if ($('.size1').css('width') == '100px') {
+    if ($('.size1').css('width') == '200px') {
       $(this).find('.overlay').toggleClass('tint');
 
       if (!$(this).find('.description').hasClass('show-description')) {
