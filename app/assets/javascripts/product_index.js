@@ -3,23 +3,32 @@ $(document).ready(function() {
 
   // apply random color tint to image overlays
   var colors = ['#600','#060','#006','#660','#606','#066'];
-  $('.overlay').each(function(){
+
+  $('.overlay').each(function() {
     var color = colors[Math.floor(Math.random() * colors.length)];
-    $(this).css('background-color',color);
-  })
+    $(this).css('background-color', color);
+  });
 
   // display details when product title is clicked
   $('.description').on('click', function(event) {
-    event.preventDefault();
-    $(this).toggleClass('show-description');
-    $(this).find('.arrow').fadeToggle(250);
+
+    if ($('.size1').css('width') == '100px') {
+      event.preventDefault();
+      $(this).toggleClass('show-description');
+      $(this).find('.arrow').fadeToggle(250);
+    };
+
   });
 
   // remove tint and show arrow when hovering on an image
   $('.product_image').hover(function() {
-    $(this).find('.overlay').toggleClass('tint');
-    if(!$(this).find('.description').hasClass('show-description')) {
-      $(this).find('.arrow').fadeToggle(0);
+
+    if ($('.size1').css('width') == '100px') {
+      $(this).find('.overlay').toggleClass('tint');
+
+      if (!$(this).find('.description').hasClass('show-description')) {
+        $(this).find('.arrow').fadeToggle(0);
+      };
     };
   });
 });
