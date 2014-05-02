@@ -15,7 +15,6 @@
 
   <% @product.reviews.each do |review| %>
     <div class = "review">
-      <!-- <div class="review"> -->
         <div class='review-text'>
           <p class='stars'><%= create_stars(review.rating) %><br>
             <small>posted by <%= review.author.username %></small></p>
@@ -33,7 +32,6 @@
             <%= link_to "<i class='fa fa-sort-down'></i>".html_safe, votes_path(review_id: review.id, value: '-1'), method: :post, id: "down"%>
           </div>
         </div>
-      <!-- </div> -->
     </div>
   <%- end -%>
 

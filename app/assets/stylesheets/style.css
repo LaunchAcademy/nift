@@ -193,11 +193,6 @@ img {
   text-align: justify;
 }
 
-.product_display_text {
-  height: 265px;
-  overflow: scroll;
-}
-
 .product_display_company_name {
   color: #FFF;
 }
@@ -291,6 +286,10 @@ input:-webkit-autofill, textarea:-webkit-autofill {
     margin: 10% 3% 0 0;
     float: right;
   }
+  .product_display_text {
+    height: 265px;
+    overflow: scroll;
+  }
 }
 
 @media all and (max-width: 500px) {
@@ -355,17 +354,21 @@ input:-webkit-autofill, textarea:-webkit-autofill {
     display: block;
   }
   .product_display_description {
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
-  }
-  .product_display_text {
-    margin: 0 auto;
+    padding: 0 10px;
   }
   .review-text {
     margin: 0 auto;
+    width: 100%;
+    padding: 0 10px;
+  }
+  .review-vote {
+    margin-left: 10px;
   }
   .back-link {
     text-align: right;
-    margin-top: 20px;
+    padding: 20px 10px;
+    clear: both;
   }
 }
