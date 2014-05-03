@@ -2,7 +2,7 @@
   <div class='product_display'>
     <div class='product_display_image'><%= image_tag(@product.image.medium) %></div>
     <div class='product_display_description'>
-      <a class='product_display_name' href='<%= @product.url %>'><h3><%= @product.name %></h3></a>
+      <a class='product_display_name' href='<%= @product.url %>'><h2><%= @product.name %></h2></a>
       <a class='product_display_company_name' href='<%= @company.url %>'><%= @company.name %></a><br>
       <%=link_to 'Review this product', new_product_review_path(@product), class: 'button review_link' %>
       <p class='product_display_text'>
