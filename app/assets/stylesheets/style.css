@@ -47,7 +47,7 @@ input {
 
 .subheading {
   margin: 10px 0 30px 80px;
-  font-size: 0.8em;
+  font-size: 0.85em;
   letter-spacing: 0.05em;
 }
 
@@ -323,7 +323,6 @@ input:-webkit-autofill, textarea:-webkit-autofill {
   .subheading {
     margin-left: auto;
     margin-right: auto;
-    font-size: 0.85em;
     text-align: center;
   }
   .product_sort_links {
