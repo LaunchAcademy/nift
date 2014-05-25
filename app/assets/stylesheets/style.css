@@ -47,8 +47,8 @@ input {
 
 .subheading {
   margin: 10px 0 30px 80px;
-  font-size: 0.85em;
-  letter-spacing: 0.05em;
+  font-size: 0.8em;
+  letter-spacing: 0.06em;
 }
 
 .product_sort {
@@ -102,7 +102,6 @@ img {
   -webkit-transition-duration: 0.8s;
   -moz-transition-duration: 0.8s;
   transition-duration: 0.8s;
-
 }
 
 .isotope {
@@ -287,6 +286,9 @@ input:-webkit-autofill, textarea:-webkit-autofill {
   .show-description {
     height: 70%;
     overflow: scroll;
+  }
+  .show-description::-webkit-scrollbar {
+    width: 0 !important
   }
   .show-description .product_details {
     opacity: 1;
